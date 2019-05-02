@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle health-data-filter",
+        "command": "health-data-filter:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "health-data-filter",
+          "submenu": [
+            {
+              "label": "Toggle",
+              "command": "health-data-filter:toggle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
