@@ -2,12 +2,12 @@
   "name": "health-data-filter",
   "main": "./lib/health-data-filter",
   "version": "0.0.0",
-  "description": "A short description of your package",
+  "description": "Allows programming OpenDiabetesFilters using Google Blockly",
   "keywords": [],
   "activationCommands": {
     "atom-workspace": "health-data-filter:toggle"
   },
-  "repository": "https://github.com/Edgxxar/OpenDiabetesFilter",
+  "repository": "https://github.com/Edgxxar/OpenDiabetes-Atom",
   "license": "AGPL-3.0",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"

@@ -4,11 +4,25 @@
 // for a full listing of what's available.
 @import "ui-variables";
 
-#blocklyArea {
-    height: 100%;
-    width: 100%;
+#blockly-workspace {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
 }
 
-#blocklyDiv {
-    position: absolute;
+#blockly-toolbar {
+  height: 50px;
+  background-color: @tool-panel-background-color;
+}
+
+#blockly-area {
+  flex: 1;
+}
+
+#blockly-div {
+  position: absolute;
+}
+
+#toolbox {
+  display: none;
 }
