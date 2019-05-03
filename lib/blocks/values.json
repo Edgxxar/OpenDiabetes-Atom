@@ -1,0 +1,86 @@
+[
+  {
+    "type": "value_datetime",
+    "message0": "%1.%2.%3 %4:%5:%6",
+    "args0": [
+      {
+        "type": "field_number",
+        "name": "DAY",
+        "value": 1,
+        "min": 1,
+        "max": 31,
+        "precision": 1
+      },
+      {
+        "type": "field_number",
+        "name": "MONTH",
+        "value": 1,
+        "min": 1,
+        "max": 12,
+        "precision": 1
+      },
+      {
+        "type": "field_number",
+        "name": "YEAR",
+        "value": 2019,
+        "precision": 1
+      },
+      {
+        "type": "field_number",
+        "name": "HOUR",
+        "value": 0,
+        "min": 0,
+        "max": 23,
+        "precision": 1
+      },
+      {
+        "type": "field_number",
+        "name": "MINUTE",
+        "value": 0,
+        "min": 0,
+        "max": 59,
+        "precision": 1
+      },
+      {
+        "type": "field_number",
+        "name": "SECOND",
+        "value": 0,
+        "min": 0,
+        "max": 59,
+        "precision": 1
+      }
+    ],
+    "output": "DateTime",
+    "colour": 230,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "value_vaultentrytype",
+    "message0": "Type %1",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "TYPE",
+        "options": [
+          [
+            "Glucose CGM",
+            "GLUCOSE_CGM"
+          ],
+          [
+            "Bolus",
+            "BOLUS_NORMAL"
+          ],
+          [
+            "Basal",
+            "BASAL_MANUAL"
+          ]
+        ]
+      }
+    ],
+    "output": "VaultEntryType",
+    "colour": 230,
+    "tooltip": "",
+    "helpUrl": ""
+  }
+]
