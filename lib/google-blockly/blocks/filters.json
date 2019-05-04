@@ -8,7 +8,7 @@
       },
       {
         "type": "input_value",
-        "name": "type",
+        "name": "TYPE",
         "check": "VaultEntryType",
         "align": "RIGHT"
       }
