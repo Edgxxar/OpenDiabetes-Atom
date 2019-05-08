@@ -51,7 +51,7 @@
       }
     ],
     "output": "DateTime",
-    "colour": 230,
+    "colour": 30,
     "tooltip": "",
     "helpUrl": ""
   },
@@ -79,7 +79,7 @@
       }
     ],
     "output": "VaultEntryType",
-    "colour": 230,
+    "colour": 30,
     "tooltip": "",
     "helpUrl": ""
   }

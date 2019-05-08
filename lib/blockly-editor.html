@@ -1,20 +1,30 @@
-<div id="blockly-toolbar">
-    <p>Hello World</p>
+<div id="blockly-toolbar" class="block">
+    <button class="btn btn-success icon icon-playback-play inline-block">Run</button>
+    <button class="btn btn-warning icon icon-file inline-block">Export</button>
+    <button class="btn btn-info icon icon-eye inline-block">Show Input Data</button>
+    <button class="btn btn-info icon icon-eye inline-block">Show Output Data</button>
 </div>
 <div id="blockly-area">
     <div id="blockly-div"></div>
 </div>
 
 <div id="blockly-output">
-    <textarea id="blockly-code"></textarea>
+    <textarea id="blockly-code" readonly></textarea>
 </div>
 <xml id="blockly-toolbox">
-    <category name="Values">
-        <block type="value_vaultentrytype"></block>
-        <block type="value_datetime"></block>
+    <category name="Import" colour="180">
+        <block type="main"></block>
+        <block type="importer_medtronic"></block>
     </category>
-    <category name="Filters">
+    <category name="Filters" colour="210">
         <block type="filter_vaultentrytype"></block>
         <block type="filter_timespan"></block>
+    </category>
+    <category name="Export" colour="240">
+        <block type="exporter_csv"></block>
+    </category>
+    <category name="Parameters" colour="30">
+        <block type="value_vaultentrytype"></block>
+        <block type="value_datetime"></block>
     </category>
 </xml>

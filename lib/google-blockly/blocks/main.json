@@ -1,0 +1,27 @@
+{
+  "type": "main",
+  "message0": "Import: %1 Filter: %2 Export: %3",
+  "args0": [
+    {
+      "type": "input_statement",
+      "name": "IMPORT",
+      "check": "Importer",
+      "align": "RIGHT"
+    },
+    {
+      "type": "input_statement",
+      "name": "FILTER",
+      "check": "Filter",
+      "align": "RIGHT"
+    },
+    {
+      "type": "input_statement",
+      "name": "EXPORT",
+      "check": "Exporter",
+      "align": "RIGHT"
+    }
+  ],
+  "colour": 120,
+  "tooltip": "",
+  "helpUrl": ""
+}
