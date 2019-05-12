@@ -13,7 +13,6 @@
 </div>
 <xml id="blockly-toolbox">
     <category name="Import" colour="180">
-        <block type="main"></block>
         <block type="importer_medtronic"></block>
     </category>
     <category name="Filters" colour="210">
@@ -27,5 +26,10 @@
         <block type="value_vaultentrytype"></block>
         <block type="value_datetime"></block>
     </category>
-    <category name="Variables" custom="VARIABLE"></category>
+    <category name="Variables">
+        <button text="Create Variable..." callbackKey="createVariable"></button>
+    </category>
+</xml>
+<xml id="startBlocks">
+    <block type="main" deletable="false" x="50" y="30"></block>
 </xml>
