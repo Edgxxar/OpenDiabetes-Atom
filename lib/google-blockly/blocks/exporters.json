@@ -9,7 +9,7 @@
       {
         "type": "field_variable",
         "name": "VAR",
-        "variable": "data"
+        "variable": "output"
       },
       {
         "type": "input_dummy"

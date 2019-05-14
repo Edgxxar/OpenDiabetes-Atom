@@ -1,57 +1,70 @@
 [
   {
     "type": "filter_vaultentrytype",
-    "message0": "entries in %1 %2 with VaultEntryType %3",
+    "message0": "VaultEntryType Filter %1 type %2",
     "args0": [
       {
-        "type": "field_variable",
-        "name": "VAR",
-        "variable": "data"
-      },
-      {
-        "type": "input_dummy"
+        "type": "input_dummy",
+        "align": "RIGHT"
       },
       {
         "type": "input_value",
         "name": "TYPE",
-        "check": "VaultEntryType"
+        "check": "VaultEntryType",
+        "align": "RIGHT"
       }
     ],
-    "inputsInline": true,
+    "inputsInline": false,
     "previousStatement": "Filter",
     "nextStatement": "Filter",
     "colour": 210,
-    "tooltip": "",
+    "tooltip": "Remove all entries that are not the given type",
     "helpUrl": ""
   },
   {
     "type": "filter_timespan",
-    "message0": "entries in %1 %2 from %3 until %4",
+    "message0": "Timespan Filter %1 from %2 until %3",
     "args0": [
-      {
-        "type": "field_variable",
-        "name": "VAR",
-        "variable": "data"
-      },
       {
         "type": "input_dummy"
       },
       {
         "type": "input_value",
         "name": "START",
-        "check": "DateTime"
+        "check": "DateTime",
+        "align": "RIGHT"
       },
       {
         "type": "input_value",
         "name": "END",
-        "check": "DateTime"
+        "check": "DateTime",
+        "align": "RIGHT"
       }
     ],
-    "inputsInline": true,
+    "inputsInline": false,
     "previousStatement": "Filter",
     "nextStatement": "Filter",
     "colour": 210,
-    "tooltip": "",
+    "tooltip": "Remove all entries that are not in the given timespan",
+    "helpUrl": ""
+  },
+  {
+    "type": "filter_and",
+    "message0": "And Filter %1 %2",
+    "args0": [
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_statement",
+        "name": "FILTERS",
+        "check": "Filter"
+      }
+    ],
+    "previousStatement": "Filter",
+    "nextStatement": "Filter",
+    "colour": 210,
+    "tooltip": "Remove all entries that do not match all contained filters",
     "helpUrl": ""
   }
 ]

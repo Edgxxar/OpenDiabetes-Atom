@@ -16,8 +16,22 @@
         <block type="importer_medtronic"></block>
     </category>
     <category name="Filters" colour="210">
-        <block type="filter_vaultentrytype"></block>
-        <block type="filter_timespan"></block>
+        <block type="filter_vaultentrytype">
+            <value name="TYPE">
+                <block type="value_vaultentrytype">
+                    <field name="TYPE">GLUCOSE_CGM</field>
+                </block>
+            </value>
+        </block>
+        <block type="filter_timespan">
+            <value name="START">
+                <block type="value_datetime"></block>
+            </value>
+            <value name="END">
+                <block type="value_datetime"></block>
+            </value>
+        </block>
+        <block type="filter_and"></block>
     </category>
     <category name="Export" colour="240">
         <block type="exporter_csv"></block>
