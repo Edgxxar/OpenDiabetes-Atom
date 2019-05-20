@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "description": "Allows programming OpenDiabetesFilters using Google Blockly",
   "keywords": [],
-  "activationCommands": {
-    "atom-workspace": "health-data-filter:toggle"
+  "deserializers": {
+    "health-data-filter/HealthDataFilterView": "deserialize"
   },
   "repository": "https://github.com/Edgxxar/OpenDiabetes-Atom",
   "license": "AGPL-3.0",
@@ -13,5 +13,6 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
+    "xml-js": "^1.6.11"
   }
 }
