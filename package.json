@@ -1,11 +1,11 @@
 {
-  "name": "health-data-filter",
-  "main": "./lib/health-data-filter",
+  "name": "open-diabetes-filter",
+  "main": "./lib/index",
   "version": "0.0.0",
   "description": "Allows programming OpenDiabetesFilters using Google Blockly",
   "keywords": [],
   "deserializers": {
-    "health-data-filter/HealthDataFilterView": "deserialize"
+    "open-diabetes-filter/OdfEditorView": "deserialize"
   },
   "repository": "https://github.com/Edgxxar/OpenDiabetes-Atom",
   "license": "AGPL-3.0",
@@ -13,6 +13,7 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
+    "etch": "^0.14.0",
     "xml-js": "^1.6.11"
   }
 }

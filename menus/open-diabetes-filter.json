@@ -2,8 +2,8 @@
   "context-menu": {
     "atom-text-editor": [
       {
-        "label": "Toggle health-data-filter",
-        "command": "health-data-filter:toggle"
+        "label": "Toggle open-diabetes-filter",
+        "command": "open-diabetes-filter:toggle"
       }
     ]
   },
@@ -12,11 +12,11 @@
       "label": "Packages",
       "submenu": [
         {
-          "label": "health-data-filter",
+          "label": "open-diabetes-filter",
           "submenu": [
             {
               "label": "Toggle",
-              "command": "health-data-filter:toggle"
+              "command": "open-diabetes-filter:toggle"
             }
           ]
         }

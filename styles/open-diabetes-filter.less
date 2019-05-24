@@ -4,15 +4,10 @@
 // for a full listing of what's available.
 @import "ui-variables";
 
-#blockly-workspace {
+#odf-editor {
   display: flex;
   min-height: 100%;
   flex-direction: column;
-}
-
-#blockly-toolbar {
-  margin: 10px;
-  background-color: @tool-panel-background-color;
 }
 
 #blockly-area {
@@ -23,16 +18,17 @@
   position: absolute;
 }
 
-#toolbox {
-  display: none;
+#odf-toolbar {
+  margin: 10px;
+  background-color: @tool-panel-background-color;
 }
 
-#blockly-output {
+#odf-output {
   height: 300px;
   background-color: @tool-panel-background-color;
 }
 
-#blockly-code {
+#odf-code {
   width: 100%;
   height: 100%;
   resize: none;

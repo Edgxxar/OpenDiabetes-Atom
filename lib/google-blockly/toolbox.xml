@@ -1,17 +1,4 @@
-<div id="blockly-toolbar" class="block">
-    <button class="btn btn-success icon icon-playback-play inline-block">Run</button>
-    <button class="btn btn-warning icon icon-file inline-block">Export</button>
-    <button class="btn btn-info icon icon-eye inline-block">Show Input Data</button>
-    <button class="btn btn-info icon icon-eye inline-block">Show Output Data</button>
-</div>
-<div id="blockly-area">
-    <div id="blockly-div"></div>
-</div>
-
-<div id="blockly-output">
-    <textarea id="blockly-code" readonly></textarea>
-</div>
-<xml id="blockly-toolbox" style="display: none;">
+<xml>
     <category name="Import" colour="180">
         <block type="importer_medtronic"></block>
     </category>
@@ -43,7 +30,4 @@
     <category name="Variables">
         <button text="Create Variable..." callbackKey="createVariable"></button>
     </category>
-</xml>
-<xml id="startBlocks" style="display: none">
-    <block type="main" deletable="false" x="50" y="30"></block>
 </xml>
