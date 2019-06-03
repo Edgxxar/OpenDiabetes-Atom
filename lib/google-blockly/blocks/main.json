@@ -1,31 +1,7 @@
 {
   "type": "main",
-  "message0": "Import data from: %1 %2 %3 Apply filters to %4 , %5 store results in %6 : %7 %8 %9 Export data: %10 %11",
+  "message0": "Filters: %1 %2",
   "args0": [
-    {
-      "type": "input_dummy"
-    },
-    {
-      "type": "input_statement",
-      "name": "IMPORT",
-      "check": "Importer"
-    },
-    {
-      "type": "input_dummy"
-    },
-    {
-      "type": "field_variable",
-      "name": "FILTERVAR",
-      "variable": "data"
-    },
-    {
-      "type": "input_dummy"
-    },
-    {
-      "type": "field_variable",
-      "name": "OUTPUTVAR",
-      "variable": "output"
-    },
     {
       "type": "input_dummy"
     },
@@ -33,17 +9,6 @@
       "type": "input_statement",
       "name": "FILTER",
       "check": "Filter"
-    },
-    {
-      "type": "input_dummy"
-    },
-    {
-      "type": "input_dummy"
-    },
-    {
-      "type": "input_statement",
-      "name": "EXPORT",
-      "check": "Exporter"
     }
   ],
   "colour": 120,

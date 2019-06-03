@@ -1,7 +1,9 @@
 <xml>
+    <!--
     <category name="Import" colour="180">
         <block type="importer_medtronic"></block>
     </category>
+    -->
     <category name="Filters" colour="210">
         <block type="filter_vaultentrytype">
             <value name="TYPE">
@@ -20,14 +22,18 @@
         </block>
         <block type="filter_and"></block>
     </category>
+    <!--
     <category name="Export" colour="240">
         <block type="exporter_csv"></block>
     </category>
+    -->
     <category name="Parameters" colour="30">
         <block type="value_vaultentrytype"></block>
         <block type="value_datetime"></block>
     </category>
+    <!--
     <category name="Variables">
         <button text="Create Variable..." callbackKey="createVariable"></button>
     </category>
+    -->
 </xml>
