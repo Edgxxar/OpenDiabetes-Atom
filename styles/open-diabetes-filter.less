@@ -4,6 +4,8 @@
 // for a full listing of what's available.
 @import "ui-variables";
 
+// editor
+
 #odf-editor {
   display: flex;
   min-height: 100%;
@@ -35,22 +37,118 @@
   color: black;
 }
 
+// modals
+
 .modal-outer {
   position: absolute;
   top: 10%;
   left: 50%;
   width: 100%;
-  max-width: 40em;
+  max-width: 100em;
 }
 
 .modal-inner {
   left: -50% !important;
+  border-bottom: 0;
+}
+
+.modal-title {
+  margin-top: 0;
 }
 
 .btn-modal {
   margin-top: 10px;
 }
 
+// panels
+
 .vault-panel {
   margin: 10px;
+}
+
+// radio buttons
+
+.checklist-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.checklist-item {
+  display: block;
+  position: relative;
+  padding-left: 20px;
+  margin: 6px 20px 6px 0;
+  user-select: none;
+  cursor: pointer;
+}
+
+.checklist-item input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  cursor: pointer;
+}
+
+.checklist-mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: @button-background-color;
+  border-radius: 50%;
+}
+
+.checklist-item:hover input ~ .checklist-mark {
+  background-color: @button-background-color-hover;
+}
+
+.checklist-item input:checked ~ .checklist-mark {
+  background-color: @button-background-color-selected;
+}
+
+.checklist-mark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checklist-item input:checked ~ .checklist-mark:after {
+  display: block;
+}
+
+.checklist-item .checklist-mark:after {
+  top: 4px;
+  left: 4px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: @button-background-color-hover;
+}
+
+// input type file
+
+.input-file {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.input-file + label {
+  margin-right: 10px;
+}
+
+// output divs for child processes
+.process-output {
+  overflow: auto;
+  height: 300px;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: @input-background-color;
+  border: 1px solid @input-border-color;
+  border-radius: 5px;
 }
