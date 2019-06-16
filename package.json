@@ -5,7 +5,8 @@
   "description": "Allows programming OpenDiabetesFilters using Google Blockly",
   "keywords": [],
   "deserializers": {
-    "open-diabetes-filter/OdfEditorView": "deserialize"
+    "open-diabetes-filter/EditorView": "deserializeEditor",
+    "open-diabetes-filter/PlotView": "deserializePlot"
   },
   "repository": "https://github.com/Edgxxar/OpenDiabetes-Atom",
   "license": "AGPL-3.0",
@@ -15,6 +16,7 @@
   "dependencies": {
     "child_process": "^1.0.2",
     "etch": "^0.14.0",
+    "pdfjs-dist": "^2.0.943",
     "xml-js": "^1.6.11"
   }
 }
