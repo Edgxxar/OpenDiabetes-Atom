@@ -18,5 +18,49 @@
     "etch": "^0.14.0",
     "pdfjs-dist": "^2.0.943",
     "xml-js": "^1.6.11"
+  },
+  "configSchema": {
+    "cli": {
+      "title": "Command Line Interface",
+      "description": "Path to your OpenDiabetesVault command line interface executable",
+      "type": "string",
+      "default": "OpenDiabetesVault.jar",
+      "order": 1
+    },
+    "commands": {
+      "title": "Commands",
+      "type": "object",
+      "properties": {
+        "version":{
+          "title": "CLI Version",
+          "description": "Used to check the version of your command line interface.<br>**Arguments:**<br>`cli`: path to your CLI executable.",
+          "type": "string",
+          "default": "java -jar \"%cli%\" --version",
+          "order": 1
+        },
+        "init":{
+          "title": "ODV repository init",
+          "description": "Used to initialize an ODV repository.<br>**Arguments:**<br>`cli`: path to your CLI executable.<br>`path`: path to your current project.",
+          "type": "string",
+          "default": "java -jar \"%cli%\" init \"%path%\"",
+          "order": 2
+        },
+        "import":{
+          "title": "ODV data import",
+          "description": "Used to import data into your ODV repository.<br>**Arguments:**<br>`cli`: path to your CLI executable.<br>`type`: import type<br>`files`: files to import.",
+          "type": "string",
+          "default": "java -jar \"%cli%\" import -t %type% %files%",
+          "order": 3
+        },
+        "process":{
+          "title": "ODV filter process",
+          "description": "Used to execute filters.<br>**Arguments:**<br>`cli`: path to your CLI executable.<br>`file`: relative path to process container.<br>`tag`: tag used for results",
+          "type": "string",
+          "default": "java -jar \"%cli%\" process -f \"%file%\" -o %tag%",
+          "order": 4
+        }
+      },
+      "order": 2
+    }
   }
 }
