@@ -154,6 +154,43 @@
   background-color: @background-color-highlight;
 }
 
+// input tag
+
+.input-tag {
+  padding: 0 .4em;
+  border: 1px solid @text-color-subtle;
+  border-radius: 3px;
+  background-color: @input-background-color;
+}
+
+.input-tag > input {
+  margin-left: 5px;
+  padding: .25em 0;
+  color: @text-color-highlight;
+  border: 0;
+  background-color: @input-background-color;
+}
+
+.tag-list {
+  display: none;
+  position: absolute;
+  overflow-y: auto;
+  z-index: 10;
+  border-radius: 3px;
+  max-height: 200px;
+  padding: .375em;
+  background-color: @base-background-color;
+}
+
+.tag-list > .list-group > li {
+  padding: 0 .4em;
+  cursor: pointer;
+}
+
+.tag-list > .list-group > li:hover {
+  background-color: @background-color-selected;
+}
+
 // output divs for child processes
 
 .process-output {
