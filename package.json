@@ -27,40 +27,68 @@
       "default": "OpenDiabetesVault.jar",
       "order": 1
     },
+    "plot": {
+      "title": "Plot generator",
+      "description": "Path to your plot executable",
+      "type": "string",
+      "default": "plot.py",
+      "order": 2
+    },
     "commands": {
       "title": "Commands",
       "type": "object",
       "properties": {
-        "version":{
+        "version": {
           "title": "CLI Version",
-          "description": "Used to check the version of your command line interface.<br>**Arguments:**<br>`cli`: path to your CLI executable.",
+          "description": "Used to check the version of your command line interface.<br>**Arguments:**<br>`cli`: path to your CLI executable",
           "type": "string",
           "default": "java -jar \"%cli%\" --version",
           "order": 1
         },
-        "init":{
+        "init": {
           "title": "ODV repository init",
-          "description": "Used to initialize an ODV repository.<br>**Arguments:**<br>`cli`: path to your CLI executable.<br>`path`: path to your current project.",
+          "description": "Used to initialize an ODV repository.<br>**Arguments:**<br>`cli`: path to your CLI executable<br>`path`: path to your current project",
           "type": "string",
           "default": "java -jar \"%cli%\" init \"%path%\"",
           "order": 2
         },
-        "import":{
+        "import": {
           "title": "ODV data import",
-          "description": "Used to import data into your ODV repository.<br>**Arguments:**<br>`cli`: path to your CLI executable.<br>`type`: import type<br>`files`: files to import.",
+          "description": "Used to import data into your ODV repository.<br>**Arguments:**<br>`cli`: path to your CLI executable<br>`type`: import type<br>`files`: files to import",
           "type": "string",
           "default": "java -jar \"%cli%\" import -t %type% %files%",
           "order": 3
         },
-        "process":{
+        "export": {
+          "title": "ODV data export",
+          "description": "Used to export all data from your ODV repository.<br>**Arguments:**<br>`cli`: path to your CLI executable<br>`type`: import type",
+          "type": "string",
+          "default": "java -jar \"%cli%\" export -t %type%",
+          "order": 4
+        },
+        "exporttagged": {
+          "title": "ODV data export (tagged)",
+          "description": "Used to export data with the given tag from your ODV repository.<br>**Arguments:**<br>`cli`: path to your CLI executable<br>`type`: import type<br>`tag`: input tag",
+          "type": "string",
+          "default": "java -jar \"%cli%\" export -t %type% -i %tag%",
+          "order": 5
+        },
+        "process": {
           "title": "ODV filter process",
-          "description": "Used to execute filters.<br>**Arguments:**<br>`cli`: path to your CLI executable.<br>`file`: relative path to process container.<br>`tag`: tag used for results",
+          "description": "Used to execute filters.<br>**Arguments:**<br>`cli`: path to your CLI executable<br>`file`: relative path to process container<br>`tag`: tag used for results",
           "type": "string",
           "default": "java -jar \"%cli%\" process -f \"%file%\" -o %tag%",
-          "order": 4
+          "order": 6
+        },
+        "plot": {
+          "title": "Plot generation",
+          "description": "Used to generate plots from data.<br>**Arguments:**<br>`file`: path to the data file<br>`out`: path to output directory",
+          "type": "string",
+          "default": "python plot.py -c config.ini -f \"%file%\" -d -T -l -o \"%out%\"",
+          "order": 7
         }
       },
-      "order": 2
+      "order": 3
     }
   }
 }
