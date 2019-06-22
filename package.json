@@ -39,7 +39,7 @@
       "type": "object",
       "properties": {
         "version": {
-          "title": "CLI Version",
+          "title": "CLI version",
           "description": "Used to check the version of your command line interface.<br>**Arguments:**<br>`cli`: path to your CLI executable",
           "type": "string",
           "default": "java -jar \"%cli%\" --version",
@@ -80,12 +80,19 @@
           "default": "java -jar \"%cli%\" process -f \"%file%\" -o %tag%",
           "order": 6
         },
+        "plotversion": {
+          "title": "Plot version",
+          "description": "Used to check the version of the plot executable.<br>**Arguments:**<br>`plot`: path to your plot executable",
+          "type": "string",
+          "default": "python \"%plot%\" --version",
+          "order": 8
+        },
         "plot": {
           "title": "Plot generation",
-          "description": "Used to generate plots from data.<br>**Arguments:**<br>`file`: path to the data file<br>`out`: path to output directory",
+          "description": "Used to generate plots from data.<br>**Arguments:**<br>`plot`: path to your plot executable<br>`file`: path to the data file<br>`out`: path to output directory",
           "type": "string",
-          "default": "python plot.py -c config.ini -f \"%file%\" -d -T -l -o \"%out%\"",
-          "order": 7
+          "default": "python \"%plot%\" -c config.ini -f \"%file%\" -d -T -l -o \"%out%\"",
+          "order": 8
         }
       },
       "order": 3
