@@ -179,11 +179,18 @@
 }
 
 .input-tag > input {
-  margin-left: 5px;
+  margin: 1px 0 0 5px;
+  vertical-align: top;
+  width: 70px;
   padding: .25em 0;
   color: @text-color-highlight;
   border: 0;
   background-color: @input-background-color;
+}
+
+.input-tag > .icon::before {
+  margin: 3px 0 0 3px;
+  color: @text-color-highlight;
 }
 
 .tag-list {
@@ -230,8 +237,17 @@
   margin-right: 5px;
 }
 
-.btn-display {
+.btn-dummy {
   cursor: default;
+  box-shadow: none;
+}
+
+.btn-dummy:hover {
+  background-image: none !important;
+}
+
+.btn-info.btn-dummy:active {
+  background: @background-color-info !important;
 }
 
 // progress
