@@ -98,24 +98,31 @@
         },
         "process": {
           "title": "ODV filter process",
-          "description": "Used to execute filters.<br>**Arguments:**<br>`cli`: path to your CLI executable<br>`file`: relative path to process container<br>`tag`: tag used for results",
+          "description": "Used to execute filters.<br>**Arguments:**<br>`cli`: path to your CLI executable<br>`file`: relative path to process container<br>`out`: tag used for results",
           "type": "string",
-          "default": "java -jar \"%cli%\" process -f \"%file%\" -o %tag%",
+          "default": "java -jar \"%cli%\" process -f \"%file%\" -o %out%",
           "order": 8
+        },
+        "processtagged": {
+          "title": "ODV filter process",
+          "description": "Used to execute filters.<br>**Arguments:**<br>`cli`: path to your CLI executable<br>`file`: relative path to process container<br>`in`: tag used for input<br>`out`: tag used for results",
+          "type": "string",
+          "default": "java -jar \"%cli%\" process -f \"%file%\" -i %in% -o %out%",
+          "order": 9
         },
         "plotversion": {
           "title": "Plot version",
           "description": "Used to check the version of the plot executable.<br>**Arguments:**<br>`plot`: path to your plot executable",
           "type": "string",
           "default": "python \"%plot%\" --version",
-          "order": 9
+          "order": 10
         },
         "plot": {
           "title": "Plot generation",
           "description": "Used to generate plots from data.<br>**Arguments:**<br>`plot`: path to your plot executable<br>`file`: path to the data file<br>`out`: path to output directory",
           "type": "string",
           "default": "python \"%plot%\" -c config.ini -f \"%file%\" -d -T -l -o \"%out%\"",
-          "order": 10
+          "order": 11
         }
       },
       "order": 4

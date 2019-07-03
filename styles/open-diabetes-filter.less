@@ -188,6 +188,11 @@
   background-color: @input-background-color;
 }
 
+.input-tag > input:disabled {
+  cursor: not-allowed;
+  color: @text-color;
+}
+
 .input-tag > .icon::before {
   margin: 3px 0 0 3px;
   color: @text-color-highlight;
