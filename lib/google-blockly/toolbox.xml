@@ -1,18 +1,23 @@
 <xml>
-    <!--
-    <category name="Import" colour="180">
-        <block type="importer_medtronic"></block>
-    </category>
-    -->
     <category name="Filters" colour="210">
-        <block type="filter_vaultentrytype">
+
+        <block type="filter_and"></block>
+
+        <block type="filter_cluster">
             <value name="TYPE">
                 <block type="value_vaultentrytype">
                     <field name="TYPE">GLUCOSE_CGM</field>
                 </block>
             </value>
         </block>
-        <block type="filter_timespan">
+
+        <block type="filter_combination"></block>
+
+        <block type="filter_compactquery"></block>
+
+        <block type="filter_continouswrapper"></block>
+
+        <block type="filter_datetimespan">
             <value name="START">
                 <block type="value_datetime"></block>
             </value>
@@ -20,20 +25,17 @@
                 <block type="value_datetime"></block>
             </value>
         </block>
-        <block type="filter_and"></block>
+
+        <block type="filter_vaultentrytype">
+            <value name="TYPE">
+                <block type="value_vaultentrytype">
+                    <field name="TYPE">GLUCOSE_CGM</field>
+                </block>
+            </value>
+        </block>
     </category>
-    <!--
-    <category name="Export" colour="240">
-        <block type="exporter_csv"></block>
-    </category>
-    -->
     <category name="Parameters" colour="30">
         <block type="value_vaultentrytype"></block>
         <block type="value_datetime"></block>
     </category>
-    <!--
-    <category name="Variables">
-        <button text="Create Variable..." callbackKey="createVariable"></button>
-    </category>
-    -->
 </xml>

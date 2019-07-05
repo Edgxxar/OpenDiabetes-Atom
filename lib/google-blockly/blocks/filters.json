@@ -1,7 +1,26 @@
 [
   {
-    "type": "filter_vaultentrytype",
-    "message0": "VaultEntryType Filter %1 type %2",
+    "type": "filter_and",
+    "message0": "And Filter %1 %2",
+    "args0": [
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_statement",
+        "name": "FILTERS",
+        "check": "Filter"
+      }
+    ],
+    "previousStatement": "Filter",
+    "nextStatement": "Filter",
+    "colour": 210,
+    "tooltip": "Remove all entries that do not match all contained filters",
+    "helpUrl": ""
+  },
+  {
+    "type": "filter_cluster",
+    "message0": "Cluster Filter %1 type %2",
     "args0": [
       {
         "type": "input_dummy",
@@ -18,12 +37,91 @@
     "previousStatement": "Filter",
     "nextStatement": "Filter",
     "colour": 210,
-    "tooltip": "Remove all entries that are not the given type",
+    "tooltip": "???",
     "helpUrl": ""
   },
   {
-    "type": "filter_timespan",
-    "message0": "Timespan Filter %1 from %2 until %3",
+    "type": "filter_combination",
+    "message0": "Combination Filter %1 First Filter %2 Second Filter %3",
+    "args0": [
+      {
+        "type": "input_dummy",
+        "align": "RIGHT"
+      },
+      {
+        "type": "input_statement",
+        "name": "FIRST",
+        "check": "Filter",
+        "align": "CENTRE"
+      },
+      {
+        "type": "input_statement",
+        "name": "SECOND",
+        "check": "Filter",
+        "align": "CENTRE"
+      }
+    ],
+    "inputsInline": false,
+    "previousStatement": "Filter",
+    "nextStatement": "Filter",
+    "colour": 210,
+    "tooltip": "Applies the second filter with the results from the first filter",
+    "helpUrl": "https://github.com/tiweGH/OpenDiabetes/wiki/Combination-Filter"
+  },
+  {
+    "type": "filter_compactquery",
+    "message0": "Compact Query Filter %1 %2",
+    "args0": [
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_statement",
+        "name": "FILTERS",
+        "check": "Filter"
+      }
+    ],
+    "previousStatement": "Filter",
+    "nextStatement": "Filter",
+    "colour": 210,
+    "tooltip": "???",
+    "helpUrl": ""
+  },
+  {
+    "type": "filter_continouswrapper",
+    "message0": "Continous Wrapper Filter %1 Margin before: %2 %3 Margin after: %4",
+    "args0": [
+      {
+        "type": "input_dummy",
+        "align": "RIGHT"
+      },
+      {
+        "type": "field_number",
+        "name": "MARGIN_BEFORE",
+        "value": 0,
+        "precision": 1
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "field_number",
+        "name": "MARGIN_AFTER",
+        "value": 0,
+        "precision": 1
+      }
+    ],
+    "inputsInline": false,
+    "previousStatement": "Filter",
+    "nextStatement": "Filter",
+    "colour": 210,
+    "tooltip": "???",
+    "helpUrl": ""
+  },
+
+  {
+    "type": "filter_datetimespan",
+    "message0": "Date Time Span Filter %1 from %2 until %3",
     "args0": [
       {
         "type": "input_dummy"
@@ -49,22 +147,25 @@
     "helpUrl": ""
   },
   {
-    "type": "filter_and",
-    "message0": "And Filter %1 %2",
+    "type": "filter_vaultentrytype",
+    "message0": "VaultEntryType Filter %1 type %2",
     "args0": [
       {
-        "type": "input_dummy"
+        "type": "input_dummy",
+        "align": "RIGHT"
       },
       {
-        "type": "input_statement",
-        "name": "FILTERS",
-        "check": "Filter"
+        "type": "input_value",
+        "name": "TYPE",
+        "check": "VaultEntryType",
+        "align": "RIGHT"
       }
     ],
+    "inputsInline": false,
     "previousStatement": "Filter",
     "nextStatement": "Filter",
     "colour": 210,
-    "tooltip": "Remove all entries that do not match all contained filters",
+    "tooltip": "Remove all entries that are not the given type",
     "helpUrl": ""
   }
 ]
