@@ -1,26 +1,12 @@
 <xml>
-    <category name="Filters" colour="210">
-
+    <category name="Logic Filters" colour="210">
         <block type="filter_and"></block>
+        <block type="filter_or"></block>
+        <block type="filter_logic"></block>
+        <block type="filter_negate"></block>
+    </category>
 
-        <block type="filter_cluster">
-            <value name="TYPE">
-                <block type="value_vaultentrytype">
-                    <field name="TYPE">GLUCOSE_CGM</field>
-                </block>
-            </value>
-        </block>
-
-        <block type="filter_combination"></block>
-
-        <block type="filter_compactquery"></block>
-
-        <block type="filter_continouswrapper"></block>
-
-        <block type="filter_counter"></block>
-
-        <block type="filter_datasetmarker"></block>
-
+    <category name="Time Filters" colour="210">
         <block type="filter_datetimepoint">
             <value name="DATE">
                 <block type="value_datetime"></block>
@@ -33,80 +19,6 @@
             </value>
             <value name="END">
                 <block type="value_datetime"></block>
-            </value>
-        </block>
-
-        <block type="filter_elevation">
-            <value name="TYPE">
-                <block type="value_vaultentrytype">
-                    <field name="TYPE">GLUCOSE_CGM</field>
-                </block>
-            </value>
-        </block>
-
-        <block type="filter_filterhitcounter"></block>
-
-        <block type="filter_gapremover">
-            <value name="TYPE">
-                <block type="value_vaultentrytype">
-                    <field name="TYPE">GLUCOSE_CGM</field>
-                </block>
-            </value>
-        </block>
-
-        <block type="filter_inbetween">
-            <value name="TYPE">
-                <block type="value_vaultentrytype">
-                    <field name="TYPE">GLUCOSE_CGM</field>
-                </block>
-            </value>
-        </block>
-
-        <block type="filter_interpolation">
-            <value name="TYPE">
-                <block type="value_vaultentrytype">
-                    <field name="TYPE">GLUCOSE_CGM</field>
-                </block>
-            </value>
-        </block>
-
-        <block type="filter_logic"></block>
-
-        <block type="filter_negate"></block>
-
-        <block type="filter_nonetype">
-            <value name="TYPE">
-                <block type="value_vaultentrytype">
-                    <field name="TYPE">GLUCOSE_CGM</field>
-                </block>
-            </value>
-        </block>
-
-        <block type="filter_or"></block>
-
-        <block type="filter_position">
-            <value name="TYPE">
-                <block type="value_vaultentrytype">
-                    <field name="TYPE">GLUCOSE_CGM</field>
-                </block>
-            </value>
-        </block>
-
-        <block type="filter_query"></block>
-
-        <block type="filter_standardize">
-            <value name="TYPE">
-                <block type="value_vaultentrytype">
-                    <field name="TYPE">GLUCOSE_CGM</field>
-                </block>
-            </value>
-        </block>
-
-        <block type="filter_threshold"></block>
-
-        <block type="filter_timecluster">
-            <value name="STARTTIME">
-                <block type="value_localtime"></block>
             </value>
         </block>
 
@@ -125,6 +37,22 @@
             </value>
         </block>
 
+        <block type="filter_timecluster">
+            <value name="STARTTIME">
+                <block type="value_localtime"></block>
+            </value>
+        </block>
+    </category>
+
+    <category name="Type Filters" colour="210">
+        <block type="filter_vaultentrytype">
+            <value name="TYPE">
+                <block type="value_vaultentrytype">
+                    <field name="TYPE">GLUCOSE_CGM</field>
+                </block>
+            </value>
+        </block>
+
         <block type="filter_typeabsence">
             <value name="TYPE">
                 <block type="value_vaultentrytype">
@@ -133,7 +61,7 @@
             </value>
         </block>
 
-        <block type="filter_valuemover">
+        <block type="filter_nonetype">
             <value name="TYPE">
                 <block type="value_vaultentrytype">
                     <field name="TYPE">GLUCOSE_CGM</field>
@@ -148,8 +76,84 @@
                 </block>
             </value>
         </block>
+    </category>
 
-        <block type="filter_vaultentrytype">
+    <category name="Other Filters" colour="210">
+        <block type="filter_cluster">
+            <value name="TYPE">
+                <block type="value_vaultentrytype">
+                    <field name="TYPE">GLUCOSE_CGM</field>
+                </block>
+            </value>
+        </block>
+
+        <block type="filter_combination"></block>
+
+        <block type="filter_compactquery"></block>
+
+        <block type="filter_continouswrapper"></block>
+
+        <block type="filter_counter"></block>
+
+        <block type="filter_datasetmarker"></block>
+
+        <block type="filter_elevation">
+            <value name="TYPE">
+                <block type="value_vaultentrytype">
+                    <field name="TYPE">GLUCOSE_CGM</field>
+                </block>
+            </value>
+        </block>
+
+        <block type="filter_filterhitcounter"></block>
+
+        <block type="filter_inbetween">
+            <value name="TYPE">
+                <block type="value_vaultentrytype">
+                    <field name="TYPE">GLUCOSE_CGM</field>
+                </block>
+            </value>
+        </block>
+
+        <block type="filter_position">
+            <value name="TYPE">
+                <block type="value_vaultentrytype">
+                    <field name="TYPE">GLUCOSE_CGM</field>
+                </block>
+            </value>
+        </block>
+
+        <block type="filter_query"></block>
+
+        <block type="filter_threshold"></block>
+    </category>
+
+    <category name="Modifying Filters" colour="210">
+        <block type="filter_gapremover">
+            <value name="TYPE">
+                <block type="value_vaultentrytype">
+                    <field name="TYPE">GLUCOSE_CGM</field>
+                </block>
+            </value>
+        </block>
+
+        <block type="filter_interpolation">
+            <value name="TYPE">
+                <block type="value_vaultentrytype">
+                    <field name="TYPE">GLUCOSE_CGM</field>
+                </block>
+            </value>
+        </block>
+
+        <block type="filter_standardize">
+            <value name="TYPE">
+                <block type="value_vaultentrytype">
+                    <field name="TYPE">GLUCOSE_CGM</field>
+                </block>
+            </value>
+        </block>
+
+        <block type="filter_valuemover">
             <value name="TYPE">
                 <block type="value_vaultentrytype">
                     <field name="TYPE">GLUCOSE_CGM</field>
@@ -157,6 +161,7 @@
             </value>
         </block>
     </category>
+
     <category name="Parameters" colour="30">
         <block type="value_datetime"></block>
         <block type="value_localtime"></block>
