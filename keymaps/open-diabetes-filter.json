@@ -1,7 +1,7 @@
 {
   "atom-workspace": {
     "ctrl-alt-l": "open-diabetes-filter:vault",
-    "ctrl-alt-o": "open-diabetes-filter:toggle",
+    "ctrl-alt-o": "open-diabetes-filter:editor",
     "ctrl-alt-p": "open-diabetes-filter:plot"
   }
 }
