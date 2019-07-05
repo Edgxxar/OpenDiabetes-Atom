@@ -118,7 +118,90 @@
     "tooltip": "???",
     "helpUrl": ""
   },
-
+  {
+    "type": "filter_counter",
+    "message0": "Counter Filter %1 Filter: %2 Hit counter: %3 %4 Only one result: %5",
+    "args0": [
+      {
+        "type": "input_dummy",
+        "align": "RIGHT"
+      },
+      {
+        "type": "input_statement",
+        "name": "FILTER",
+        "check": "Filter"
+      },
+      {
+        "type": "field_number",
+        "name": "HITCOUNTER",
+        "value": 0,
+        "precision": 1
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "field_checkbox",
+        "name": "ONLYONE",
+        "checked": true
+      }
+    ],
+    "inputsInline": false,
+    "previousStatement": "Filter",
+    "nextStatement": "Filter",
+    "colour": 210,
+    "tooltip": "Checks if the given filter hits at least n results.",
+    "helpUrl": ""
+  },
+  {
+    "type": "filter_datasetmarker",
+    "lastDummyAlign0": "RIGHT",
+    "message0": "Dataset Marker",
+    "inputsInline": false,
+    "previousStatement": "Filter",
+    "nextStatement": "Filter",
+    "colour": 210,
+    "tooltip": "Filters Nothing. Used as a pointer to a specific state of the VaultEntry Dataset given via filter. Use instances of this class in other Filters, which need to have access to specific previous states.",
+    "helpUrl": ""
+  },
+  {
+    "type": "filter_datetimepoint",
+    "lastDummyAlign0": "RIGHT",
+    "message0": "Date Time Point Filter %1 Date: %2 Margin before: %3 %4 Margin after: %5",
+    "args0": [
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "DATE",
+        "check": "DateTime",
+        "align": "RIGHT"
+      },
+      {
+        "type": "field_number",
+        "name": "MARGIN_BEFORE",
+        "value": 0,
+        "precision": 1
+      },
+      {
+        "type": "input_dummy",
+        "align": "RIGHT"
+      },
+      {
+        "type": "field_number",
+        "name": "MARGIN_AFTER",
+        "value": 0,
+        "precision": 1
+      }
+    ],
+    "inputsInline": false,
+    "previousStatement": "Filter",
+    "nextStatement": "Filter",
+    "colour": 210,
+    "tooltip": "Remove all entries that are not at the given date time",
+    "helpUrl": ""
+  },
   {
     "type": "filter_datetimespan",
     "message0": "Date Time Span Filter %1 from %2 until %3",
@@ -146,6 +229,367 @@
     "tooltip": "Remove all entries that are not in the given timespan",
     "helpUrl": ""
   },
+  {
+    "type": "filter_elevation",
+    "lastDummyAlign0": "RIGHT",
+    "message0": "Elevation Filter %1 VaultEntryType: %2 Min elevation per minute: %3 %4 Minutes between entries: %5",
+    "args0": [
+      {
+        "type": "input_dummy",
+        "align": "CENTRE"
+      },
+      {
+        "type": "input_value",
+        "name": "TYPE",
+        "check": "VaultEntryType",
+        "align": "RIGHT"
+      },
+      {
+        "type": "field_number",
+        "name": "MIN_ELEVATION",
+        "value": 0,
+        "precision": 1e-16
+      },
+      {
+        "type": "input_dummy",
+        "align": "RIGHT"
+      },
+      {
+        "type": "field_number",
+        "name": "MINUTES_BETWEEN",
+        "value": 0,
+        "precision": 1
+      }
+    ],
+    "inputsInline": false,
+    "previousStatement": "Filter",
+    "nextStatement": "Filter",
+    "colour": 210,
+    "tooltip": "???",
+    "helpUrl": ""
+  },
+  {
+    "type": "filter_filterhitcounter",
+    "message0": "Filter Hit Counter Filter %1 Filter: %2 Minimum Hits: %3 %4 Maximum Hits: %5 %6 None Hits: %7",
+    "args0": [
+      {
+        "type": "input_dummy",
+        "align": "CENTRE"
+      },
+      {
+        "type": "input_statement",
+        "name": "FILTER",
+        "check": "Filter"
+      },
+      {
+        "type": "field_number",
+        "name": "MIN",
+        "value": 0,
+        "precision": 1
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "field_number",
+        "name": "MAX",
+        "value": 0,
+        "precision": 1
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "field_checkbox",
+        "name": "NONE",
+        "checked": false
+      }
+    ],
+    "inputsInline": false,
+    "previousStatement": "Filter",
+    "nextStatement": "Filter",
+    "colour": 210,
+    "tooltip": "???",
+    "helpUrl": ""
+  },
+  {
+    "type": "filter_gapremover",
+    "message0": "Gap Remover Filter %1 type %2 Cluster time in minutes: %3",
+    "args0": [
+      {
+        "type": "input_dummy",
+        "align": "RIGHT"
+      },
+      {
+        "type": "input_value",
+        "name": "TYPE",
+        "check": "VaultEntryType",
+        "align": "RIGHT"
+      },
+      {
+        "type": "field_number",
+        "name": "TIME",
+        "value": 0,
+        "precision": 1
+      }
+    ],
+    "inputsInline": false,
+    "previousStatement": "Filter",
+    "nextStatement": "Filter",
+    "colour": 210,
+    "tooltip": "???",
+    "helpUrl": ""
+  },
+  {
+    "type": "filter_inbetween",
+    "message0": "In Between Filter %1 type %2 Minimum value: %3 %4 Maximum value: %5 %6 Normalize: %7",
+    "args0": [
+      {
+        "type": "input_dummy",
+        "align": "CENTRE"
+      },
+      {
+        "type": "input_value",
+        "name": "TYPE",
+        "check": "VaultEntryType",
+        "align": "RIGHT"
+      },
+      {
+        "type": "field_number",
+        "name": "MIN",
+        "value": 0,
+        "precision": 1
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "field_number",
+        "name": "MAX",
+        "value": 0,
+        "precision": 1
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "field_checkbox",
+        "name": "NORMALIZE",
+        "checked": false
+      }
+    ],
+    "inputsInline": false,
+    "previousStatement": "Filter",
+    "nextStatement": "Filter",
+    "colour": 210,
+    "tooltip": "???",
+    "helpUrl": ""
+  },
+  {
+    "type": "filter_interpolation",
+    "message0": "Interpolation Filter %1 type %2 Entries between timstamps: %3",
+    "args0": [
+      {
+        "type": "input_dummy",
+        "align": "CENTRE"
+      },
+      {
+        "type": "input_value",
+        "name": "TYPE",
+        "check": "VaultEntryType",
+        "align": "RIGHT"
+      },
+      {
+        "type": "field_number",
+        "name": "BETWEEN",
+        "value": 1,
+        "min": 1,
+        "precision": 1
+      }
+    ],
+    "inputsInline": false,
+    "previousStatement": "Filter",
+    "nextStatement": "Filter",
+    "colour": 210,
+    "tooltip": "???",
+    "helpUrl": ""
+  },
+  {
+    "type": "filter_logic",
+    "message0": "Logic Filter %1 %2 Only one result: %3",
+    "args0": [
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_statement",
+        "name": "FILTERS",
+        "check": "Filter"
+      },
+      {
+        "type": "field_checkbox",
+        "name": "ONLYONE",
+        "checked": false
+      }
+    ],
+    "previousStatement": "Filter",
+    "nextStatement": "Filter",
+    "colour": 210,
+    "tooltip": "???",
+    "helpUrl": ""
+  },
+  {
+    "type": "filter_negate",
+    "message0": "Negate Filter %1 %2",
+    "args0": [
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_statement",
+        "name": "FILTER",
+        "check": "Filter"
+      }
+    ],
+    "previousStatement": "Filter",
+    "nextStatement": "Filter",
+    "colour": 210,
+    "tooltip": "Negates the result of the unterlying filter",
+    "helpUrl": ""
+  },
+  {
+    "type": "filter_nonetype",
+    "message0": "None Type Filter %1 type %2",
+    "args0": [
+      {
+        "type": "input_dummy",
+        "align": "RIGHT"
+      },
+      {
+        "type": "input_value",
+        "name": "TYPE",
+        "check": "VaultEntryType",
+        "align": "RIGHT"
+      }
+    ],
+    "inputsInline": false,
+    "previousStatement": "Filter",
+    "nextStatement": "Filter",
+    "colour": 210,
+    "tooltip": "Remove all entries that are the given type",
+    "helpUrl": ""
+  },
+  {
+    "type": "filter_or",
+    "message0": "Or Filter %1 %2",
+    "args0": [
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_statement",
+        "name": "FILTERS",
+        "check": "Filter"
+      }
+    ],
+    "previousStatement": "Filter",
+    "nextStatement": "Filter",
+    "colour": 210,
+    "tooltip": "Remove all entries that do not match any contained filter",
+    "helpUrl": ""
+  },
+  {
+    "type": "filter_position",
+    "message0": "Position Filter %1 %2 Mode: %3 %4 Type: %5",
+    "args0": [
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_statement",
+        "name": "FILTER",
+        "check": "Filter"
+      },
+      {
+        "type": "field_dropdown",
+        "name": "MODE",
+        "options": [
+          [
+            "First",
+            "FIRST"
+          ],
+          [
+            "Last",
+            "LAST"
+          ],
+          [
+            "Middle",
+            "MIDDLE"
+          ],
+          [
+            "Date Middle",
+            "DATE_MIDDLE"
+          ],
+          [
+            "Weighted Middle",
+            "WEIGHTED_MIDDLE"
+          ]
+        ]
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "TYPE",
+        "check": "VaultEntryType"
+      }
+    ],
+    "previousStatement": "Filter",
+    "nextStatement": "Filter",
+    "colour": 210,
+    "tooltip": "Remove all entries that do not match any contained filter",
+    "helpUrl": ""
+  },
+  {
+    "type": "filter_query",
+    "message0": "Query Filter %1 Main Filter: %2 Inner Filter: %3 Minimum Size: %4 %5 Maximum Size: %6",
+    "args0": [
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_statement",
+        "name": "FILTER_MAIN",
+        "check": "Filter"
+      },
+      {
+        "type": "input_statement",
+        "name": "FILTER_INNER",
+        "check": "Filter"
+      },
+      {
+        "type": "field_number",
+        "name": "MIN",
+        "value": 0
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "field_number",
+        "name": "MAX",
+        "value": 0
+      }
+    ],
+    "previousStatement": "Filter",
+    "nextStatement": "Filter",
+    "colour": 210,
+    "tooltip": "???",
+    "helpUrl": ""
+  },
+
+
   {
     "type": "filter_vaultentrytype",
     "message0": "VaultEntryType Filter %1 type %2",

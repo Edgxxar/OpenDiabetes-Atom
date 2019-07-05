@@ -17,6 +17,16 @@
 
         <block type="filter_continouswrapper"></block>
 
+        <block type="filter_counter"></block>
+
+        <block type="filter_datasetmarker"></block>
+
+        <block type="filter_datetimepoint">
+            <value name="DATE">
+                <block type="value_datetime"></block>
+            </value>
+        </block>
+
         <block type="filter_datetimespan">
             <value name="START">
                 <block type="value_datetime"></block>
@@ -25,6 +35,64 @@
                 <block type="value_datetime"></block>
             </value>
         </block>
+
+        <block type="filter_elevation">
+            <value name="TYPE">
+                <block type="value_vaultentrytype">
+                    <field name="TYPE">GLUCOSE_CGM</field>
+                </block>
+            </value>
+        </block>
+
+        <block type="filter_filterhitcounter"></block>
+
+        <block type="filter_gapremover">
+            <value name="TYPE">
+                <block type="value_vaultentrytype">
+                    <field name="TYPE">GLUCOSE_CGM</field>
+                </block>
+            </value>
+        </block>
+
+        <block type="filter_inbetween">
+            <value name="TYPE">
+                <block type="value_vaultentrytype">
+                    <field name="TYPE">GLUCOSE_CGM</field>
+                </block>
+            </value>
+        </block>
+
+        <block type="filter_interpolation">
+            <value name="TYPE">
+                <block type="value_vaultentrytype">
+                    <field name="TYPE">GLUCOSE_CGM</field>
+                </block>
+            </value>
+        </block>
+
+        <block type="filter_logic"></block>
+
+        <block type="filter_negate"></block>
+
+        <block type="filter_nonetype">
+            <value name="TYPE">
+                <block type="value_vaultentrytype">
+                    <field name="TYPE">GLUCOSE_CGM</field>
+                </block>
+            </value>
+        </block>
+
+        <block type="filter_or"></block>
+
+        <block type="filter_position">
+            <value name="TYPE">
+                <block type="value_vaultentrytype">
+                    <field name="TYPE">GLUCOSE_CGM</field>
+                </block>
+            </value>
+        </block>
+
+        <block type="filter_query"></block>
 
         <block type="filter_vaultentrytype">
             <value name="TYPE">
