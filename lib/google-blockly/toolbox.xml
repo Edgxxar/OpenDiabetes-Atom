@@ -94,6 +94,61 @@
 
         <block type="filter_query"></block>
 
+        <block type="filter_standardize">
+            <value name="TYPE">
+                <block type="value_vaultentrytype">
+                    <field name="TYPE">GLUCOSE_CGM</field>
+                </block>
+            </value>
+        </block>
+
+        <block type="filter_threshold"></block>
+
+        <block type="filter_timecluster">
+            <value name="STARTTIME">
+                <block type="value_localtime"></block>
+            </value>
+        </block>
+
+        <block type="filter_timepoint">
+            <value name="TIME">
+                <block type="value_localtime"></block>
+            </value>
+        </block>
+
+        <block type="filter_timespan">
+            <value name="START">
+                <block type="value_localtime"></block>
+            </value>
+            <value name="END">
+                <block type="value_localtime"></block>
+            </value>
+        </block>
+
+        <block type="filter_typeabsence">
+            <value name="TYPE">
+                <block type="value_vaultentrytype">
+                    <field name="TYPE">GLUCOSE_CGM</field>
+                </block>
+            </value>
+        </block>
+
+        <block type="filter_valuemover">
+            <value name="TYPE">
+                <block type="value_vaultentrytype">
+                    <field name="TYPE">GLUCOSE_CGM</field>
+                </block>
+            </value>
+        </block>
+
+        <block type="filter_vaultentrytypecounter">
+            <value name="TYPE">
+                <block type="value_vaultentrytype">
+                    <field name="TYPE">GLUCOSE_CGM</field>
+                </block>
+            </value>
+        </block>
+
         <block type="filter_vaultentrytype">
             <value name="TYPE">
                 <block type="value_vaultentrytype">
@@ -103,7 +158,8 @@
         </block>
     </category>
     <category name="Parameters" colour="30">
-        <block type="value_vaultentrytype"></block>
         <block type="value_datetime"></block>
+        <block type="value_localtime"></block>
+        <block type="value_vaultentrytype"></block>
     </category>
 </xml>

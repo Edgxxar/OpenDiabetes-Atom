@@ -588,8 +588,312 @@
     "tooltip": "???",
     "helpUrl": ""
   },
-
-
+  {
+    "type": "filter_standardize",
+    "message0": "Standardize Filter %1 type %2 Between Zero and One: %3",
+    "args0": [
+      {
+        "type": "input_dummy",
+        "align": "CENTRE"
+      },
+      {
+        "type": "input_value",
+        "name": "TYPE",
+        "check": "VaultEntryType",
+        "align": "RIGHT"
+      },
+      {
+        "type": "field_checkbox",
+        "name": "BETWEEN",
+        "checked": false
+      }
+    ],
+    "inputsInline": false,
+    "previousStatement": "Filter",
+    "nextStatement": "Filter",
+    "colour": 210,
+    "tooltip": "???",
+    "helpUrl": ""
+  },
+  {
+    "type": "filter_threshold",
+    "message0": "Threshold Filter %1 Minimum Threshold: %2 %3 Maximum Threshold: %4 %5 Mode: %6",
+    "args0": [
+      {
+        "type": "input_dummy",
+        "align": "CENTRE"
+      },
+      {
+        "type": "field_number",
+        "name": "MIN",
+        "value": 0,
+        "precision": 1
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "field_number",
+        "name": "MAX",
+        "value": 0,
+        "precision": 1
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "field_dropdown",
+        "name": "MODE",
+        "options": [
+          [
+            "Over",
+            "OVER"
+          ],
+          [
+            "Under",
+            "UNDER"
+          ],
+          [
+            "Bandpass",
+            "BANDPASS"
+          ]
+        ]
+      }
+    ],
+    "inputsInline": false,
+    "previousStatement": "Filter",
+    "nextStatement": "Filter",
+    "colour": 210,
+    "tooltip": "???",
+    "helpUrl": ""
+  },
+  {
+    "type": "filter_timecluster",
+    "lastDummyAlign0": "RIGHT",
+    "message0": "Time Cluster Filter %1 %2 Start Time: %3 Cluster Time in Minutes: %4 %5 Cluster Spacing: %6",
+    "args0": [
+      {
+        "type": "input_dummy",
+        "align": "CENTRE"
+      },
+      {
+        "type": "input_statement",
+        "name": "FILTERS",
+        "check": "Filter"
+      },
+      {
+        "type": "input_value",
+        "name": "STARTTIME",
+        "check": "LocalTime",
+        "align": "RIGHT"
+      },
+      {
+        "type": "field_number",
+        "name": "MINUTES",
+        "value": 0,
+        "min": 0
+      },
+      {
+        "type": "input_dummy",
+        "align": "RIGHT"
+      },
+      {
+        "type": "field_number",
+        "name": "SPACING",
+        "value": 0,
+        "min": 0
+      }
+    ],
+    "previousStatement": "Filter",
+    "nextStatement": "Filter",
+    "colour": 210,
+    "tooltip": "???",
+    "helpUrl": ""
+  },
+  {
+    "type": "filter_timepoint",
+    "lastDummyAlign0": "RIGHT",
+    "message0": "Time Point Filter %1 Time: %2 Margin before: %3 %4 Margin after: %5",
+    "args0": [
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "TIME",
+        "check": "LocalTime",
+        "align": "RIGHT"
+      },
+      {
+        "type": "field_number",
+        "name": "MARGIN_BEFORE",
+        "value": 0,
+        "min": 0,
+        "precision": 1
+      },
+      {
+        "type": "input_dummy",
+        "align": "RIGHT"
+      },
+      {
+        "type": "field_number",
+        "name": "MARGIN_AFTER",
+        "value": 0,
+        "min": 0,
+        "precision": 1
+      }
+    ],
+    "inputsInline": false,
+    "previousStatement": "Filter",
+    "nextStatement": "Filter",
+    "colour": 210,
+    "tooltip": "Remove all entries that are not at the given time",
+    "helpUrl": ""
+  },
+  {
+    "type": "filter_timespan",
+    "message0": "Time Span Filter %1 from %2 until %3",
+    "args0": [
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "START",
+        "check": "LocalTime",
+        "align": "RIGHT"
+      },
+      {
+        "type": "input_value",
+        "name": "END",
+        "check": "LocalTime",
+        "align": "RIGHT"
+      }
+    ],
+    "inputsInline": false,
+    "previousStatement": "Filter",
+    "nextStatement": "Filter",
+    "colour": 210,
+    "tooltip": "Remove all entries that are not in the given timespan",
+    "helpUrl": ""
+  },
+  {
+    "type": "filter_typeabsence",
+    "message0": "Type Absence Filter %1 type %2 Margin after Trigger: %3",
+    "args0": [
+      {
+        "type": "input_dummy",
+        "align": "CENTRE"
+      },
+      {
+        "type": "input_value",
+        "name": "TYPE",
+        "check": "VaultEntryType",
+        "align": "RIGHT"
+      },
+      {
+        "type": "field_number",
+        "name": "MARGIN",
+        "value": 0,
+        "min": 0,
+        "precision": 1
+      }
+    ],
+    "inputsInline": false,
+    "previousStatement": "Filter",
+    "nextStatement": "Filter",
+    "colour": 210,
+    "tooltip": "???",
+    "helpUrl": ""
+  },
+  {
+    "type": "filter_valuemover",
+    "lastDummyAlign0": "RIGHT",
+    "message0": "Value Mover Filter %1 Type: %2 Value: %3 %4 Is Add: %5",
+    "args0": [
+      {
+        "type": "input_dummy",
+        "align": "CENTRE"
+      },
+      {
+        "type": "input_value",
+        "name": "TYPE",
+        "check": "VaultEntryType",
+        "align": "RIGHT"
+      },
+      {
+        "type": "field_number",
+        "name": "VALUE",
+        "value": 0,
+        "precision": 1e-16
+      },
+      {
+        "type": "input_dummy",
+        "align": "RIGHT"
+      },
+      {
+        "type": "field_checkbox",
+        "name": "ISADD",
+        "checked": false
+      }
+    ],
+    "inputsInline": false,
+    "previousStatement": "Filter",
+    "nextStatement": "Filter",
+    "colour": 210,
+    "tooltip": "???",
+    "helpUrl": ""
+  },
+  {
+    "type": "filter_vaultentrytypecounter",
+    "lastDummyAlign0": "RIGHT",
+    "message0": "VaultEntryType Counter Filter %1 Type: %2 Minimum Hits: %3 %4 Maximum Hits: %5 %6 None Hits: %7",
+    "args0": [
+      {
+        "type": "input_dummy",
+        "align": "CENTRE"
+      },
+      {
+        "type": "input_value",
+        "name": "TYPE",
+        "check": "VaultEntryType",
+        "align": "RIGHT"
+      },
+      {
+        "type": "field_number",
+        "name": "MIN",
+        "value": 0,
+        "min": 0,
+        "precision": 1
+      },
+      {
+        "type": "input_dummy",
+        "align": "RIGHT"
+      },
+      {
+        "type": "field_number",
+        "name": "MAX",
+        "value": 0,
+        "min": 0,
+        "precision": 1
+      },
+      {
+        "type": "input_dummy",
+        "align": "RIGHT"
+      },
+      {
+        "type": "field_checkbox",
+        "name": "NONE",
+        "checked": true
+      }
+    ],
+    "inputsInline": false,
+    "previousStatement": "Filter",
+    "nextStatement": "Filter",
+    "colour": 210,
+    "tooltip": "???",
+    "helpUrl": ""
+  },
   {
     "type": "filter_vaultentrytype",
     "message0": "VaultEntryType Filter %1 type %2",

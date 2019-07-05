@@ -56,6 +56,40 @@
     "helpUrl": ""
   },
   {
+    "type": "value_localtime",
+    "message0": "%1 : %2 : %3",
+    "args0": [
+      {
+        "type": "field_number",
+        "name": "HOUR",
+        "value": 0,
+        "min": 0,
+        "max": 23,
+        "precision": 1
+      },
+      {
+        "type": "field_number",
+        "name": "MINUTE",
+        "value": 0,
+        "min": 0,
+        "max": 59,
+        "precision": 1
+      },
+      {
+        "type": "field_number",
+        "name": "SECOND",
+        "value": 0,
+        "min": 0,
+        "max": 59,
+        "precision": 1
+      }
+    ],
+    "output": "LocalTime",
+    "colour": 30,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
     "type": "value_vaultentrytype",
     "message0": "Type %1",
     "args0": [
