@@ -154,7 +154,6 @@
 }
 
 .input-file + label {
-  margin: 0 10px 0 0;
   background-color: @input-background-color;
   border: 1px solid @text-color-subtle;
   border-radius: 3px;
@@ -261,12 +260,8 @@ progress {
   margin-right: 5px;
 }
 
-// dir tree
-.dir-item {
-  margin-left: 1em;
-  cursor: pointer;
-}
-
-.dir-item-selected {
-  background-color: @background-color-info;
+// reapply border radius for file input label in button groups
+.btn-group > .input-file:first-child + label.btn:nth-child(2) {
+  border-top-left-radius: 3px !important;
+  border-bottom-left-radius: 3px !important;
 }
