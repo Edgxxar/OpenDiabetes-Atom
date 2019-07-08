@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "child_process": "^1.0.2",
+    "dockerode": "^2.5.8",
     "etch": "^0.14.0",
     "fs-extra": "^8.1.0",
     "md5-file": "^4.0.0",
@@ -23,26 +24,47 @@
     "xml-js": "^1.6.11"
   },
   "configSchema": {
+    "docker-cleanup": {
+      "title": "Remove Docker containers after exection",
+      "description": "Remove Docker containers after they finished executing.",
+      "type": "boolean",
+      "default": true,
+      "order": 0
+    },
+    "docker-remote": {
+      "title": "Use Remote Docker",
+      "description": "Use a remote Docker instance. Specify host and port below.",
+      "type": "boolean",
+      "default": false,
+      "order": 1
+    },
+    "docker-host": {
+      "title": "Remote Docker Host",
+      "description": "Protocol and host of your docker daemon.",
+      "type": "string",
+      "default": "http://mydockerhost.tld",
+      "order": 2
+    },
+    "docker-port": {
+      "title": "Remote Docker Port",
+      "description": "Port of your docker daemon",
+      "type": "integer",
+      "default": 2375,
+      "order": 3
+    },
     "cli": {
       "title": "Command Line Interface",
-      "description": "Path to your OpenDiabetesVault command line interface executable",
+      "description": "Not used if you are using Docker. Path to your OpenDiabetesVault command line interface executable",
       "type": "string",
       "default": "OpenDiabetesVault.jar",
-      "order": 1
+      "order": 4
     },
     "cli-precompile": {
       "title": "Filter compilation",
       "description": "If enabled filter processes will be compiled, using the compile command below, before being passed to the CLI.",
       "type": "boolean",
       "default": true,
-      "order": 2
-    },
-    "plot": {
-      "title": "Plot generator",
-      "description": "Path to your plot executable",
-      "type": "string",
-      "default": "plot.py",
-      "order": 3
+      "order": 5
     },
     "commands": {
       "title": "Commands",
@@ -122,11 +144,11 @@
           "title": "Plot generation",
           "description": "Used to generate plots from data.<br>**Arguments:**<br>`plot`: path to your plot executable<br>`file`: path to the data file<br>`out`: path to output directory",
           "type": "string",
-          "default": "python \"%plot%\" -c config.ini -f \"%file%\" -d -T -l -o \"%out%\"",
+          "default": "plot -c \"%config%\" -f \"%file%\" -d -T -l -o \"%out%\"",
           "order": 11
         }
       },
-      "order": 4
+      "order": 7
     }
   }
 }
