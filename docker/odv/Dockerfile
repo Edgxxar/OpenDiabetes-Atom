@@ -10,7 +10,7 @@ COPY lib lib/
 COPY nbproject nbproject/
 COPY build.xml build.xml
 
-# Compile, extract librarbies, jar
+# Compile, extract libraries, deploy
 RUN ant compile && \
     unzip -o lib/gson/gson-2.8.5.jar -d build/classes/ && \
 	unzip -o lib/picocli/picocli-4.0.0-alpha-2.jar -d build/classes/ && \
