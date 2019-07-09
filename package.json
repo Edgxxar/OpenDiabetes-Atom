@@ -24,113 +24,128 @@
     "xml-js": "^1.6.11"
   },
   "configSchema": {
+    "docker": {
+      "title": "Use Docker",
+      "description": "Use Docker for filter execution and plot generation. Docker images `plotteria` and `odv` need to be installed manually.",
+      "type": "boolean",
+      "default": true,
+      "order": 1
+    },
     "docker-cleanup": {
       "title": "Remove Docker containers after exection",
       "description": "Remove Docker containers after they finished executing.",
       "type": "boolean",
       "default": true,
-      "order": 0
+      "order": 2
     },
     "docker-remote": {
       "title": "Use Remote Docker",
       "description": "Use a remote Docker instance. Specify host and port below.",
       "type": "boolean",
       "default": false,
-      "order": 1
+      "order": 3
     },
     "docker-host": {
       "title": "Remote Docker Host",
       "description": "Protocol and host of your docker daemon.",
       "type": "string",
       "default": "http://mydockerhost.tld",
-      "order": 2
+      "order": 4
     },
     "docker-port": {
       "title": "Remote Docker Port",
       "description": "Port of your docker daemon",
       "type": "integer",
       "default": 2375,
-      "order": 3
+      "order": 5
     },
     "cli": {
       "title": "Command Line Interface",
-      "description": "Not used if you are using Docker. Path to your OpenDiabetesVault command line interface executable",
+      "description": "Not used if you are using Docker. Path to your OpenDiabetesVault command line interface executable. Java required in path.",
       "type": "string",
       "default": "OpenDiabetesVault.jar",
-      "order": 4
+      "order": 6
+    },
+    "plot": {
+      "title": "Plot generator",
+      "description": "Not used if you are using Docker. Path to your plot executable. Python 3 required in path.",
+      "type": "string",
+      "default": "plot.py",
+      "order": 7
     },
     "cli-precompile": {
       "title": "Filter compilation",
       "description": "If enabled filter processes will be compiled, using the compile command below, before being passed to the CLI.",
       "type": "boolean",
       "default": true,
-      "order": 5
+      "order": 8
     },
     "commands": {
       "title": "Commands",
+      "description": "Commands are executed in Docker if enabled, or on your system.<br>The variable `\"%cli\"` will be substituted with the corresponding path to the ODV CLI executable.",
       "type": "object",
       "properties": {
         "version": {
           "title": "CLI version",
-          "description": "Used to check the version of your command line interface.<br>**Arguments:**<br>`cli`: path to your CLI executable",
+          "description": "Used to check the version of your command line interface.",
           "type": "string",
-          "default": "odv --version",
+          "default": "java -jar \"%cli%\" --version",
           "order": 1
         },
         "init": {
           "title": "ODV repository init",
           "description": "Used to initialize an ODV repository.",
           "type": "string",
-          "default": "odv init .",
+          "default": "java -jar \"%cli%\" init .",
           "order": 2
         },
         "listtags": {
           "title": "ODV tag list",
           "description": "Used to get all tags of the current ODV repository.",
           "type": "string",
-          "default": "odv tag -l",
+          "default": "java -jar \"%cli%\" tag -l",
           "order": 3
         },
         "import": {
           "title": "ODV data import",
           "description": "Used to import data into your ODV repository.<br>**Arguments:**<br>`type`: import type<br>`files`: files to import",
           "type": "string",
-          "default": "odv import -t %type% %files%",
+          "default": "java -jar \"%cli%\" import -t %type% %files%",
           "order": 4
         },
         "export": {
           "title": "ODV data export",
           "description": "Used to export all data from your ODV repository.<br>**Arguments:**<br>`type`: import type",
           "type": "string",
-          "default": "odv export -t %type%",
+          "default": "java -jar \"%cli%\" export -t %type%",
           "order": 5
         },
         "exporttagged": {
           "title": "ODV data export (tagged)",
           "description": "Used to export data with the given tag from your ODV repository.<br>**Arguments:**<br>`type`: import type<br>`tag`: input tag",
           "type": "string",
-          "default": "odv export -t %type% -i %tag%",
+          "default": "java -jar \"%cli%\" export -t %type% -i %tag%",
           "order": 6
         },
         "compile": {
           "title": "ODV filter compilation",
           "description": "Used to compile ODV filter classes before execution<br>**Arguments:**<br>`file`: relative path to process container",
           "type": "string",
-          "default": "javac -cp /opt/odv/dist/OpenDiabetesVault.jar \"%file%\"",
+          "default": "javac -cp \"%cli%\" \"%file%\"",
           "order": 7
         },
         "process": {
           "title": "ODV filter process",
           "description": "Used to execute filters.<br>**Arguments:**<br>`file`: relative path to process container<br>`out`: tag used for results",
           "type": "string",
-          "default": "odv process -f \"%file%\" -o %out%",
+          "default": "java -jar \"%cli%\" process -f \"%file%\" -o %out%",
           "order": 8
         },
         "processtagged": {
           "title": "ODV filter process",
           "description": "Used to execute filters.<br>**Arguments:**<br>`file`: relative path to process container<br>`in`: tag used for input<br>`out`: tag used for results",
           "type": "string",
-          "default": "odv process -f \"%file%\" -i %in% -o %out%",
+          "default": "java -jar \"%cli%\" process -f \"%file%\" -i %in% -o %out%",
           "order": 9
         },
         "plotversion": {
@@ -144,11 +159,11 @@
           "title": "Plot generation",
           "description": "Used to generate plots from data.<br>**Arguments:**<br>`plot`: path to your plot executable<br>`file`: path to the data file<br>`out`: path to output directory",
           "type": "string",
-          "default": "plot -c \"%config%\" -f \"%file%\" -d -T -l -o \"%out%\"",
+          "default": "python \"%plot%\" -c \"%config%\" -f \"%file%\" -d -T -l -o \"%out%\"",
           "order": 11
         }
       },
-      "order": 7
+      "order": 9
     }
   }
 }
