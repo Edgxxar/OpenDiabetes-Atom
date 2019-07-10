@@ -98,16 +98,212 @@
         "name": "TYPE",
         "options": [
           [
+            "Bolus Normal",
+            "BOLUS_NORMAL"
+          ],
+          [
+            "Bolus Square",
+            "BOLUS_SQUARE"
+          ],
+          [
+            "Basal Profile",
+            "BASAL_PROFILE"
+          ],
+          [
+            "Basal Temp",
+            "BASAL_TEMP"
+          ],
+          [
+            "Exercise Manual",
+            "EXERCISE_MANUAL"
+          ],
+          [
+            "Exercise Other",
+            "EXERCISE_OTHER"
+          ],
+          [
+            "Exercise Low",
+            "EXERCISE_LOW"
+          ],
+          [
+            "Exercise Mid",
+            "EXERCISE_MID"
+          ],
+          [
+            "Exercise High",
+            "EXERCISE_HIGH"
+          ],
+          [
             "Glucose CGM",
             "GLUCOSE_CGM"
           ],
           [
-            "Bolus",
-            "BOLUS_NORMAL"
+            "Glucose CGM Raw",
+            "GLUCOSE_CGM_RAW"
           ],
           [
-            "Basal",
-            "BASAL_MANUAL"
+            "Glucose CGM Alert",
+            "GLUCOSE_CGM_ALERT"
+          ],
+          [
+            "Glucose CGM Calibration",
+            "GLUCOSE_CGM_CALIBRATION"
+          ],
+          [
+            "Glucose BG",
+            "GLUCOSE_BG"
+          ],
+          [
+            "Glucose BG Manual",
+            "GLUCOSE_BG_MANUAL"
+          ],
+          [
+            "Glucose Bolus Calculation",
+            "GLUCOSE_BOLUS_CALCULATION"
+          ],
+          [
+            "Meal Bolus Calculator",
+            "MEAL_BOLUS_CALCULATOR"
+          ],
+          [
+            "Meal Manual",
+            "MEAL_MANUAL"
+          ],
+          [
+            "CGM Sensor Start",
+            "CGM_SENSOR_START"
+          ],
+          [
+            "CGM Sensor Finished",
+            "CGM_SENSOR_FINISHED"
+          ],
+          [
+            "CGM Connection Error",
+            "CGM_CONNECTION_ERROR"
+          ],
+          [
+            "CGM Calibration Error",
+            "CGM_CALIBRATION_ERROR"
+          ],
+          [
+            "CGM Time Sync",
+            "CGM_TIME_SYNC"
+          ],
+          [
+            "Pump Rewind",
+            "PUMP_REWIND"
+          ],
+          [
+            "Pump Prime",
+            "PUMP_PRIME"
+          ],
+          [
+            "Pump Fill",
+            "PUMP_FILL"
+          ],
+          [
+            "Pump No Delivery",
+            "PUMP_NO_DELIVERY"
+          ],
+          [
+            "Pump Suspend",
+            "PUMP_SUSPEND"
+          ],
+          [
+            "Pump Autonomous Suspend",
+            "PUMP_AUTONOMOUS_SUSPEND"
+          ],
+          [
+            "Pump Unsuspend",
+            "PUMP_UNSUSPEND"
+          ],
+          [
+            "Pump Untracked Error",
+            "PUMP_UNTRACKED_ERROR"
+          ],
+          [
+            "Pump Reservoir Empty",
+            "PUMP_RESERVOIR_EMPTY"
+          ],
+          [
+            "Pump Time Sync",
+            "PUMP_TIME_SYNC"
+          ],
+          [
+            "Pump CGM Prediction",
+            "PUMP_CGM_PREDICTION"
+          ],
+          [
+            "Sleep Light",
+            "SLEEP_LIGHT"
+          ],
+          [
+            "Sleep Rem",
+            "SLEEP_REM"
+          ],
+          [
+            "Sleep Deep",
+            "SLEEP_DEEP"
+          ],
+          [
+            "Heart Rate",
+            "HEART_RATE"
+          ],
+          [
+            "Heart Rate Variability",
+            "HEART_RATE_VARIABILITY"
+          ],
+          [
+            "Stress",
+            "STRESS"
+          ],
+          [
+            "Weight",
+            "WEIGHT"
+          ],
+          [
+            "Ketones Blood",
+            "KETONES_BLOOD"
+          ],
+          [
+            "Ketones Urine",
+            "KETONES_URINE"
+          ],
+          [
+            "LOC Transition",
+            "LOC_TRANSITION"
+          ],
+          [
+            "LOC Home",
+            "LOC_HOME"
+          ],
+          [
+            "LOC Work",
+            "LOC_WORK"
+          ],
+          [
+            "LOC Food",
+            "LOC_FOOD"
+          ],
+          [
+            "LOC Sports",
+            "LOC_SPORTS"
+          ],
+          [
+            "LOC Other",
+            "LOC_OTHER"
+          ],
+          [
+            "Blood Pressure",
+            "BLOOD_PRESSURE"
+          ],
+          [
+            "Tag",
+            "TAG"
+          ],
+          [
+            "Refined Vault Entry",
+            "REFINED_VAULT_ENTRY"
           ]
         ]
       }
