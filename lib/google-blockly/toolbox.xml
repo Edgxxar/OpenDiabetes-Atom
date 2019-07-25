@@ -105,6 +105,14 @@
             </value>
         </block>
 
+        <block type="filter_elevation_point">
+            <value name="TYPE">
+                <block type="value_vaultentrytype">
+                    <field name="TYPE">GLUCOSE_CGM</field>
+                </block>
+            </value>
+        </block>
+
         <block type="filter_filterhitcounter"></block>
 
         <block type="filter_inbetween">

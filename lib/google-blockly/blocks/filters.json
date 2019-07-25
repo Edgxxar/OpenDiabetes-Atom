@@ -269,6 +269,45 @@
     "helpUrl": ""
   },
   {
+    "type": "filter_elevation_point",
+    "lastDummyAlign0": "RIGHT",
+    "message0": "Elevation Point Filter %1 VaultEntryType: %2 Min elevation per minute: %3 %4 Minutes between entries: %5",
+    "args0": [
+      {
+        "type": "input_dummy",
+        "align": "CENTRE"
+      },
+      {
+        "type": "input_value",
+        "name": "TYPE",
+        "check": "VaultEntryType",
+        "align": "RIGHT"
+      },
+      {
+        "type": "field_number",
+        "name": "MIN_ELEVATION",
+        "value": 0,
+        "precision": 1e-16
+      },
+      {
+        "type": "input_dummy",
+        "align": "RIGHT"
+      },
+      {
+        "type": "field_number",
+        "name": "MINUTES_BETWEEN",
+        "value": 0,
+        "precision": 1
+      }
+    ],
+    "inputsInline": false,
+    "previousStatement": "Filter",
+    "nextStatement": "Filter",
+    "colour": 210,
+    "tooltip": "???",
+    "helpUrl": ""
+  },
+  {
     "type": "filter_filterhitcounter",
     "message0": "Filter Hit Counter Filter %1 Filter: %2 Minimum Hits: %3 %4 Maximum Hits: %5 %6 None Hits: %7",
     "args0": [
