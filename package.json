@@ -18,6 +18,7 @@
     "dockerode": "^2.5.8",
     "etch": "^0.14.0",
     "fs-extra": "^8.1.0",
+    "gunzip-file": "^0.1.1",
     "md5-file": "^4.0.0",
     "pdfjs-dist": "^2.0.943",
     "slash": "^3.0.0",
