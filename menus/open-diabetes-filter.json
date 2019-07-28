@@ -9,7 +9,7 @@
     "li[is='tree-view-file'] > span[data-name$='.odf']": [
       {
         "label": "Open with Blockly ODF",
-        "command": "open-diabetes-filter:editor"
+        "command": "open-diabetes-filter:editor-file"
       }
     ]
   },
