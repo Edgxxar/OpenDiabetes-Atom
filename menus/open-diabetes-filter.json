@@ -21,8 +21,12 @@
           "label": "open-diabetes-filter",
           "submenu": [
             {
-              "label": "Toggle",
+              "label": "Open Blockly ODF",
               "command": "open-diabetes-filter:editor"
+            },
+            {
+              "label": "Open Plots",
+              "command": "open-diabetes-filter:plot"
             }
           ]
         }

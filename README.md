@@ -19,6 +19,6 @@ Currently the following keyboard shortcuts open the different views:
 |----------|--------|
 | `ctrl`+`alt`+`o` | Filter editor (Blockly) |
 | `ctrl`+`alt`+`p` |  Plot view (Not yet implemented) |
-| `ctrl`+`alt`+`l` | ODV settings |
+| `ctrl`+`,` | Open Settings. Navigate to *Packages* > *open-diabetes-filter* > *Settings*
 
 These shortcuts are subject to change.
