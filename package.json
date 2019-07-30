@@ -30,7 +30,7 @@
       "title": "Use Docker",
       "description": "Use Docker for filter execution and plot generation. Docker images `plotteria` and `odv` need to be installed manually.",
       "type": "boolean",
-      "default": true,
+      "default": false,
       "order": 1
     },
     "docker-cleanup": {
@@ -61,18 +61,18 @@
       "default": 2375,
       "order": 5
     },
-    "cli": {
-      "title": "Command Line Interface",
-      "description": "Not used if you are using Docker. Path to your OpenDiabetesVault command line interface executable. Java required in path.",
-      "type": "string",
-      "default": "OpenDiabetesVault.jar",
+    "cli-native": {
+      "title": "Use built-in ODV CLI",
+      "description": "Not used if you are using Docker. Use the built-in OpenDiabetesVault command line interface.",
+      "type": "boolean",
+      "default": true,
       "order": 6
     },
-    "plot": {
-      "title": "Plot generator",
-      "description": "Not used if you are using Docker. Path to your plot executable. Python 3 required in path.",
+    "cli-custom": {
+      "title": "Custom ODV CLI",
+      "description": "Not used if you are using Docker. Path to your OpenDiabetesVault command line interface executable.",
       "type": "string",
-      "default": "plot.py",
+      "default": "OpenDiabetesVault.jar",
       "order": 7
     },
     "cli-precompile": {
@@ -81,6 +81,20 @@
       "type": "boolean",
       "default": true,
       "order": 8
+    },
+    "plot-native": {
+      "title": "Use built-in Plot generator",
+      "description": "Not used if you are using Docker. Use the built-in Plot generator.",
+      "type": "boolean",
+      "default": true,
+      "order": 9
+    },
+    "plot-custom": {
+      "title": "Plot generator",
+      "description": "Not used if you are using Docker. Path to your plot executable. Python 3 required in path.",
+      "type": "string",
+      "default": "plot.py",
+      "order": 10
     },
     "commands": {
       "title": "Commands",
@@ -165,7 +179,7 @@
           "order": 11
         }
       },
-      "order": 9
+      "order": 11
     }
   }
 }

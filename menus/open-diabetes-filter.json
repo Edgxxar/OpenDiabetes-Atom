@@ -31,6 +31,14 @@
             {
               "label": "Manually initialize repository",
               "command": "open-diabetes-filter:initialize-repository"
+            },
+            {
+              "label": "Open Settings",
+              "command": "open-diabetes-filter:settings"
+            },
+            {
+              "label": "Check Settings",
+              "command": "open-diabetes-filter:check-settings"
             }
           ]
         }
