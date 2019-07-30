@@ -57,13 +57,13 @@ You need to have [Git](https://git-scm.com/) and [NodeJS](https://nodejs.org/en/
    1. you may have to press the `Enable` button to enable the package. Then reload atom again.
 
 ## Settings
-To open the settings navigate to *Packages* > *open-diabetes-filter* > *Settings* or press `ctrl`+`alt`+`l`.
+To open the settings navigate to *Packages* > *Open Diabetes Filter* > *Settings* or press `ctrl`+`alt`+`l`.
 
 By default open-diabetes-filter will use the native ODV CLI and Plot generator executables that are shipped with this repository.
 If you want to use Docker, select the *Use Docker* checkbox in the settings. 
 If you want to use a custom ODV CLI or Plot generator, uncheck the *Use built-in ODV CLI* or *Use built-in Plot generator* checkboxes and specify the paths to your executables with the setting below the checkbox. 
 
-You can check that everything is working correctly by using the *Packages* > *open-diabetes-filter* > *Check Settings* Menu.
+You can check that everything is working correctly by using the *Packages* > *Open Diabetes Filter* > *Check Settings* Menu.
 
 ## Keyboard shortcuts
 Currently the following keyboard shortcuts open the different views:

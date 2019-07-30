@@ -5,12 +5,6 @@
         "label": "Toggle open-diabetes-filter",
         "command": "open-diabetes-filter:editor"
       }
-    ],
-    "li[is='tree-view-file'] > span[data-name$='.odf']": [
-      {
-        "label": "Open with Blockly ODF",
-        "command": "open-diabetes-filter:editor-file"
-      }
     ]
   },
   "menu": [
@@ -18,7 +12,7 @@
       "label": "Packages",
       "submenu": [
         {
-          "label": "open-diabetes-filter",
+          "label": "Open Diabetes Filter",
           "submenu": [
             {
               "label": "Open Blockly ODF",
