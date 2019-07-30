@@ -27,6 +27,10 @@
             {
               "label": "Open Plots",
               "command": "open-diabetes-filter:plot"
+            },
+            {
+              "label": "Manually initialize repository",
+              "command": "open-diabetes-filter:initialize-repository"
             }
           ]
         }
