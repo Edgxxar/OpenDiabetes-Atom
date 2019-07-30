@@ -185,12 +185,33 @@
           "default": "python \"%plot%\" --version",
           "order": 10
         },
-        "plot": {
-          "title": "Plot generation",
+        "plot-all": {
+          "title": "Plot generation (all)",
           "description": "Used to generate plots from data.<br>**Arguments:**<br>`plot`: path to your plot executable<br>`file`: path to the data file<br>`out`: path to output directory",
           "type": "string",
-          "default": "python \"%plot%\" -c \"%config%\" -f \"%file%\" -d -T -l -o \"%out%\"",
+          "default": "python \"%plot%\" -c \"%config%\" -f \"%file%\" -d -L -o \"%out%\"",
           "order": 11
+        },
+        "plot-big": {
+          "title": "Plot generation (tiny slices)",
+          "description": "Used to generate plots from data.<br>**Arguments:**<br>`plot`: path to your plot executable<br>`file`: path to the data file<br>`slice`: path to the slice file<br>`out`: path to output directory",
+          "type": "string",
+          "default": "python \"%plot%\" -c \"%config%\" -f \"%file%\" -b \"%slice%\" -L -o \"%out%\"",
+          "order": 12
+        },
+        "plot-normal": {
+          "title": "Plot generation (normal slices)",
+          "description": "Used to generate plots from data.<br>**Arguments:**<br>`plot`: path to your plot executable<br>`file`: path to the data file<br>`slice`: path to the slice file<br>`out`: path to output directory",
+          "type": "string",
+          "default": "python \"%plot%\" -c \"%config%\" -f \"%file%\" -n \"%slice%\" -L -o \"%out%\"",
+          "order": 13
+        },
+        "plot-tiny": {
+          "title": "Plot generation (big slices)",
+          "description": "Used to generate plots from data.<br>**Arguments:**<br>`plot`: path to your plot executable<br>`file`: path to the data file<br>`slice`: path to the slice file<br>`out`: path to output directory",
+          "type": "string",
+          "default": "python \"%plot%\" -c \"%config%\" -f \"%file%\" -t \"%slice%\" -L -o \"%out%\"",
+          "order": 14
         }
       },
       "order": 13

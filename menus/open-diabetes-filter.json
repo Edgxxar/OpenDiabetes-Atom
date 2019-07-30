@@ -15,15 +15,15 @@
           "label": "Open Diabetes Filter",
           "submenu": [
             {
-              "label": "Open Blockly ODF",
+              "label": "Open New ODF Editor",
               "command": "open-diabetes-filter:editor"
             },
             {
-              "label": "Open Plots",
+              "label": "Open New Plot Window",
               "command": "open-diabetes-filter:plot"
             },
             {
-              "label": "Manually initialize repository",
+              "label": "Manually Initialize Repository",
               "command": "open-diabetes-filter:initialize-repository"
             },
             {
