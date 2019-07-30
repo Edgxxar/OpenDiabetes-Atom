@@ -83,22 +83,36 @@
       "order": 8
     },
     "plot-native": {
-      "title": "Use built-in Plot generator",
-      "description": "Not used if you are using Docker. Use the built-in Plot generator.",
+      "title": "Use built-in plot generator",
+      "description": "Not used if you are using Docker. Use the built-in plot generator.",
       "type": "boolean",
       "default": true,
       "order": 9
     },
     "plot-custom": {
       "title": "Plot generator",
-      "description": "Not used if you are using Docker. Path to your plot executable. Python 3 required in path.",
+      "description": "Not used if you are using Docker. Path to your plot executable.",
       "type": "string",
       "default": "plot.py",
       "order": 10
     },
+    "plot-config-native": {
+      "title": "Use built-in plot config",
+      "description": "Use the built-in plot config.",
+      "type": "boolean",
+      "default": true,
+      "order": 11
+    },
+    "plot-config": {
+      "title": "Plot config",
+      "description": "Path to your plot config.",
+      "type": "string",
+      "default": "config.ini",
+      "order": 12
+    },
     "commands": {
       "title": "Commands",
-      "description": "Commands are executed in Docker if enabled, or on your system.<br>The variable `\"%cli\"` will be substituted with the corresponding path to the ODV CLI executable.",
+      "description": "Commands are executed in Docker if enabled, or on your system.<br>The variable `cli` will be substituted with the corresponding path to the ODV CLI executable.",
       "type": "object",
       "properties": {
         "version": {
@@ -179,7 +193,7 @@
           "order": 11
         }
       },
-      "order": 11
+      "order": 13
     }
   }
 }
