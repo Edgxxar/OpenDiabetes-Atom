@@ -388,11 +388,15 @@ def linregressScipy(x, y):
 	ssxm, ssxym, ssyxm, ssym = np.cov(x, y, bias=1).flat
 	r_num = ssxym
 
-	slope = r_num / ssxm
+	if(ssxm):
+		slope = r_num / ssxm
+	else:
+		slope = 0.0
+
 	intercept = ymean - slope*xmean
 	return (slope, intercept)
 
-def parseSlices(csvFileName):
+def parseSlicesDepricated(csvFileName):
 	with open(csvFileName, 'rU') as csvfile:
 		reader = csv.reader(csvfile, delimiter=',', dialect=csv.excel_tab)
 		header = next(reader)
@@ -407,6 +411,33 @@ def parseSlices(csvFileName):
 			slices.append(dict(list(zip(header, row))))
 
 	return slices
+	
+	
+def parseSlices(csvFileName):
+	slices = []
+	with open(csvFileName, 'rU') as csvfile:
+		reader = csv.reader(csvfile, delimiter=',', dialect=csv.excel_tab)
+		try:
+			header = next(reader)
+		except StopIteration:
+			print("[Error] Given slice file is empty")
+			sys.exit(0)
+
+
+		for row in reader:
+			# row[0] = timestamp
+			# row[1] = duration
+
+			timestamp = iso8601.parse_date(row[0])
+			date = '{:%d.%m.%y}'.format(timestamp)
+			time = '{:%H:%M}'.format(timestamp)
+			
+			tmpEntry = {"date": date, "time": time, "duration": row[1]}
+			
+			slices.append(tmpEntry)
+		
+	return slices
+
 
 bgAvailable = False
 cgmAvailable = False
@@ -1327,8 +1358,9 @@ def plot(dataset, config, outPath, beginDate, duration, plotType, extLegend, lim
 
 					slope, intercept = linregressScipy([x1, x2], [y1, y2])
 
-					cgmRedHighValuesX[cgmRedHighIndex].append(dates.num2date(np.linalg.solve([[slope]], [cgmRedHighLimit - intercept])[0]))
-					cgmRedHighValuesY[cgmRedHighIndex].append(float(cgmRedHighLimit))
+					if(slope):
+						cgmRedHighValuesX[cgmRedHighIndex].append(dates.num2date(np.linalg.solve([[slope]], [cgmRedHighLimit - intercept])[0]))
+						cgmRedHighValuesY[cgmRedHighIndex].append(float(cgmRedHighLimit))
 				if float(plottingData['cgmValuesY'][i][j]) > cgmRedHighLimit:
 					cgmRedHighValuesX[cgmRedHighIndex].append(plottingData['cgmValuesX'][i][j])
 					cgmRedHighValuesY[cgmRedHighIndex].append(plottingData['cgmValuesY'][i][j])
@@ -1346,8 +1378,9 @@ def plot(dataset, config, outPath, beginDate, duration, plotType, extLegend, lim
 
 					slope, intercept = linregressScipy([x1, x2], [y1, y2])
 
-					cgmRedLowValuesX[cgmRedLowIndex].append(dates.num2date(np.linalg.solve([[slope]], [cgmRedLowLimit - intercept])[0]))
-					cgmRedLowValuesY[cgmRedLowIndex].append(cgmRedLowLimit)
+					if(slope):
+						cgmRedLowValuesX[cgmRedLowIndex].append(dates.num2date(np.linalg.solve([[slope]], [cgmRedLowLimit - intercept])[0]))
+						cgmRedLowValuesY[cgmRedLowIndex].append(cgmRedLowLimit)
 				if float(plottingData['cgmValuesY'][i][j]) <= cgmRedLowLimit:
 					cgmRedLowValuesX[cgmRedLowIndex].append(plottingData['cgmValuesX'][i][j])
 					cgmRedLowValuesY[cgmRedLowIndex].append(plottingData['cgmValuesY'][i][j])
@@ -2041,7 +2074,8 @@ def plot(dataset, config, outPath, beginDate, duration, plotType, extLegend, lim
 	axBarPlots.set_xlim(beginDate, endDate)
 	#fig.tight_layout()
 	# hide 00:00
-	axBarPlots.xaxis.get_major_ticks()[0].label1.set_visible(False)
+	if(duration > 300):
+		axBarPlots.xaxis.get_major_ticks()[0].label1.set_visible(False)
 	# remove overlapping yaxis ticks
 	axBarPlots.yaxis.get_major_ticks()[-2].label1.set_visible(False)
 	if config["plotBooleans"].getboolean("plotBasal"):
