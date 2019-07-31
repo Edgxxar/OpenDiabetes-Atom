@@ -17,6 +17,7 @@
     "child_process": "^1.0.2",
     "dockerode": "^2.5.8",
     "etch": "^0.14.0",
+    "fast-csv": "^3.4.0",
     "fs-extra": "^8.1.0",
     "gunzip-file": "^0.1.1",
     "md5-file": "^4.0.0",
@@ -182,35 +183,35 @@
           "title": "Plot version",
           "description": "Used to check the version of the plot executable.<br>**Arguments:**<br>`plot`: path to your plot executable",
           "type": "string",
-          "default": "python \"%plot%\" --version",
+          "default": "python3 \"%plot%\" --version",
           "order": 10
         },
         "plot-daily": {
           "title": "Plot generation (Daily Plots)",
           "description": "Used to generate plots from data.<br>**Arguments:**<br>`plot`: path to your plot executable<br>`file`: path to the data file<br>`out`: path to output directory",
           "type": "string",
-          "default": "python \"%plot%\" -c \"%config%\" -f \"%file%\" -d -L -o \"%out%\"",
+          "default": "python3 \"%plot%\" -c \"%config%\" -f \"%file%\" -d -L -o \"%out%\"",
           "order": 11
         },
         "plot-tiny": {
           "title": "Plot generation (Tiny Slices)",
           "description": "Used to generate plots from data.<br>**Arguments:**<br>`plot`: path to your plot executable<br>`file`: path to the data file<br>`slice`: path to the slice file<br>`out`: path to output directory",
           "type": "string",
-          "default": "python \"%plot%\" -c \"%config%\" -f \"%file%\" -t \"%slice%\" -L -o \"%out%\"",
+          "default": "python3 \"%plot%\" -c \"%config%\" -f \"%file%\" -t \"%slice%\" -L -o \"%out%\"",
           "order": 12
         },
         "plot-normal": {
           "title": "Plot generation (Normal Slices)",
           "description": "Used to generate plots from data.<br>**Arguments:**<br>`plot`: path to your plot executable<br>`file`: path to the data file<br>`slice`: path to the slice file<br>`out`: path to output directory",
           "type": "string",
-          "default": "python \"%plot%\" -c \"%config%\" -f \"%file%\" -n \"%slice%\" -L -o \"%out%\"",
+          "default": "python3 \"%plot%\" -c \"%config%\" -f \"%file%\" -n \"%slice%\" -L -o \"%out%\"",
           "order": 13
         },
         "plot-big": {
           "title": "Plot generation (Big Slices)",
           "description": "Used to generate plots from data.<br>**Arguments:**<br>`plot`: path to your plot executable<br>`file`: path to the data file<br>`slice`: path to the slice file<br>`out`: path to output directory",
           "type": "string",
-          "default": "python \"%plot%\" -c \"%config%\" -f \"%file%\" -b \"%slice%\" -L -o \"%out%\"",
+          "default": "python3 \"%plot%\" -c \"%config%\" -f \"%file%\" -b \"%slice%\" -L -o \"%out%\"",
           "order": 14
         }
       },
