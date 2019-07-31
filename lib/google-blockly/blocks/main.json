@@ -1,6 +1,6 @@
 {
   "type": "main",
-  "message0": "Filters: %1 %2",
+  "message0": "Filters: %1 %2 Normalize time series %3 with %4 minutes margin",
   "args0": [
     {
       "type": "input_dummy"
@@ -9,6 +9,16 @@
       "type": "input_statement",
       "name": "FILTER",
       "check": "Filter"
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_number",
+      "name": "NORMALIZE",
+      "value": 5,
+      "min": 0,
+      "precision": 1
     }
   ],
   "colour": 120,
