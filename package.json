@@ -1,7 +1,7 @@
 {
   "name": "open-diabetes-filter",
   "main": "./lib/index",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Allows programming OpenDiabetesFilters using Google Blockly",
   "keywords": [],
   "deserializers": {
