@@ -35,7 +35,7 @@
       "order": 1
     },
     "docker-cleanup": {
-      "title": "Remove Docker containers after exection",
+      "title": "Remove Docker Containers After Exection",
       "description": "Remove Docker containers after they finished executing.",
       "type": "boolean",
       "default": true,
@@ -77,7 +77,7 @@
       "order": 7
     },
     "cli-precompile": {
-      "title": "Filter compilation",
+      "title": "Filter Compilation",
       "description": "If enabled filter processes will be compiled, using the compile command below, before being passed to the CLI.",
       "type": "boolean",
       "default": true,
@@ -91,7 +91,7 @@
       "order": 9
     },
     "plot-custom": {
-      "title": "Plot generator",
+      "title": "Custom Plot Generator",
       "description": "Not used if you are using Docker. Path to your plot executable.",
       "type": "string",
       "default": "plot.py",
@@ -105,7 +105,7 @@
       "order": 11
     },
     "plot-config": {
-      "title": "Plot config",
+      "title": "Custom Plot Config",
       "description": "Path to your plot config.",
       "type": "string",
       "default": "config.ini",

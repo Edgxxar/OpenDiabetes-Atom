@@ -1,4 +1,4 @@
-# OpenDiabetes-Atom
+# Open Diabetes Filter
 This project provides a package for the [Atom](https://atom.io) text editor which allows for programming [OpenDiabetesFilters](https://github.com/Edgxxar/OpenDiabetesFilter) using [Google Blockly](https://developers.google.com/blockly/).
 
 ## Installation
@@ -35,7 +35,7 @@ You need to have the following software installed on your system for this packag
 
 Obviously you need to have [Atom](https://atom.io) installed and running.
 
-### Install with Atom
+### Automatic Installation
 1. Start Atom
 1. Open the Settings (`ctrl`+`,`)
 1. Navigate to the `Install` menu
@@ -43,7 +43,7 @@ Obviously you need to have [Atom](https://atom.io) installed and running.
 1. Click install
 1. Restart atom if you are prompted to do so
 
-### Local installation
+### Manual Installation
 The following guide will install this package locally with your atom editor. You do not have to do this if you installed this package with the Atom package registry.
 You need to have [Git](https://git-scm.com/) and [NodeJS](https://nodejs.org/en/download/) installed on your system. 
 
