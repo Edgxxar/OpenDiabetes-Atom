@@ -1,9 +1,13 @@
 {
   "context-menu": {
-    "atom-text-editor": [
+    "atom-workspace": [
       {
-        "label": "Toggle open-diabetes-filter",
+        "label": "Toggle Open Diabetes Filter",
         "command": "open-diabetes-filter:editor"
+      },
+      {
+        "label": "Open New Plot Window",
+        "command": "open-diabetes-filter:plot"
       }
     ]
   },
