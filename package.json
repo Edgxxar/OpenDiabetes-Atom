@@ -28,88 +28,109 @@
   },
   "configSchema": {
     "docker": {
-      "title": "Use Docker",
-      "description": "Use Docker for filter execution and plot generation. Docker images `plotteria` and `odv` need to be installed manually.",
-      "type": "boolean",
-      "default": false,
+      "title": "Docker",
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "title": "Use Docker",
+          "description": "Use Docker for filter execution and plot generation. Docker images `plotteria` and `odv` need to be installed manually.",
+          "type": "boolean",
+          "default": false,
+          "order": 1
+        },
+        "cleanup": {
+          "title": "Remove Docker Containers After Exection",
+          "description": "Remove Docker containers after they finished executing.",
+          "type": "boolean",
+          "default": true,
+          "order": 2
+        },
+        "remote": {
+          "title": "Use Remote Docker",
+          "description": "Use a remote Docker instance. Specify host and port below.",
+          "type": "boolean",
+          "default": false,
+          "order": 3
+        },
+        "host": {
+          "title": "Remote Docker Host",
+          "description": "Protocol and host of your docker daemon.",
+          "type": "string",
+          "default": "http://mydockerhost.tld",
+          "order": 4
+        },
+        "port": {
+          "title": "Remote Docker Port",
+          "description": "Port of your docker daemon",
+          "type": "integer",
+          "default": 2375,
+          "order": 5
+        }
+      },
       "order": 1
     },
-    "docker-cleanup": {
-      "title": "Remove Docker Containers After Exection",
-      "description": "Remove Docker containers after they finished executing.",
-      "type": "boolean",
-      "default": true,
+    "cli": {
+      "title": "Open Diabetes Vault Command Line Interface",
+      "type": "object",
+      "properties": {
+        "native": {
+          "title": "Use built-in ODV CLI",
+          "description": "Not used if you are using Docker. Use the built-in OpenDiabetesVault command line interface.",
+          "type": "boolean",
+          "default": true,
+          "order": 1
+        },
+        "custom": {
+          "title": "Custom ODV CLI",
+          "description": "Not used if you are using Docker. Path to your OpenDiabetesVault command line interface executable.",
+          "type": "string",
+          "default": "OpenDiabetesVault.jar",
+          "order": 2
+        },
+        "precompile": {
+          "title": "Filter Compilation",
+          "description": "If enabled filter processes will be compiled, using the compile command below, before being passed to the CLI.",
+          "type": "boolean",
+          "default": true,
+          "order": 3
+        }
+      },
       "order": 2
     },
-    "docker-remote": {
-      "title": "Use Remote Docker",
-      "description": "Use a remote Docker instance. Specify host and port below.",
-      "type": "boolean",
-      "default": false,
+    "plot": {
+      "title": "Plotteria",
+      "type": "object",
+      "properties": {
+        "native": {
+          "title": "Use built-in plot generator",
+          "description": "Not used if you are using Docker. Use the built-in plot generator.",
+          "type": "boolean",
+          "default": true,
+          "order": 1
+        },
+        "custom": {
+          "title": "Custom Plot Generator",
+          "description": "Not used if you are using Docker. Path to your plot executable.",
+          "type": "string",
+          "default": "plot.py",
+          "order": 2
+        },
+        "config-native": {
+          "title": "Use built-in plot config",
+          "description": "Use the built-in plot config.",
+          "type": "boolean",
+          "default": true,
+          "order": 3
+        },
+        "config-custom": {
+          "title": "Custom Plot Config",
+          "description": "Path to your plot config.",
+          "type": "string",
+          "default": "config.ini",
+          "order": 4
+        }
+      },
       "order": 3
-    },
-    "docker-host": {
-      "title": "Remote Docker Host",
-      "description": "Protocol and host of your docker daemon.",
-      "type": "string",
-      "default": "http://mydockerhost.tld",
-      "order": 4
-    },
-    "docker-port": {
-      "title": "Remote Docker Port",
-      "description": "Port of your docker daemon",
-      "type": "integer",
-      "default": 2375,
-      "order": 5
-    },
-    "cli-native": {
-      "title": "Use built-in ODV CLI",
-      "description": "Not used if you are using Docker. Use the built-in OpenDiabetesVault command line interface.",
-      "type": "boolean",
-      "default": true,
-      "order": 6
-    },
-    "cli-custom": {
-      "title": "Custom ODV CLI",
-      "description": "Not used if you are using Docker. Path to your OpenDiabetesVault command line interface executable.",
-      "type": "string",
-      "default": "OpenDiabetesVault.jar",
-      "order": 7
-    },
-    "cli-precompile": {
-      "title": "Filter Compilation",
-      "description": "If enabled filter processes will be compiled, using the compile command below, before being passed to the CLI.",
-      "type": "boolean",
-      "default": true,
-      "order": 8
-    },
-    "plot-native": {
-      "title": "Use built-in plot generator",
-      "description": "Not used if you are using Docker. Use the built-in plot generator.",
-      "type": "boolean",
-      "default": true,
-      "order": 9
-    },
-    "plot-custom": {
-      "title": "Custom Plot Generator",
-      "description": "Not used if you are using Docker. Path to your plot executable.",
-      "type": "string",
-      "default": "plot.py",
-      "order": 10
-    },
-    "plot-config-native": {
-      "title": "Use built-in plot config",
-      "description": "Use the built-in plot config.",
-      "type": "boolean",
-      "default": true,
-      "order": 11
-    },
-    "plot-config": {
-      "title": "Custom Plot Config",
-      "description": "Path to your plot config.",
-      "type": "string",
-      "default": "config.ini",
-      "order": 12
     },
     "paths": {
       "title": "System Paths",
@@ -138,7 +159,7 @@
           "order": 3
         }
       },
-      "order": 13
+      "order": 4
     },
     "commands": {
       "title": "Commands",
@@ -251,7 +272,7 @@
           "order": 15
         }
       },
-      "order": 14
+      "order": 5
     }
   }
 }
