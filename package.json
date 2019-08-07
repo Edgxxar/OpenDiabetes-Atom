@@ -111,118 +111,147 @@
       "default": "config.ini",
       "order": 12
     },
+    "paths": {
+      "title": "System Paths",
+      "description": "Paths to your Java and Python binaries",
+      "type": "object",
+      "properties": {
+        "java": {
+          "title": "Java",
+          "description": "If java is in your path, you can leave this at default",
+          "type": "string",
+          "default": "java",
+          "order": 1
+        },
+        "javac": {
+          "title": "Java Compiler",
+          "description": "If javac is in your path, you can leave this at default",
+          "type": "string",
+          "default": "javac",
+          "order": 2
+        },
+        "python": {
+          "title": "Python 3",
+          "description": "If python is in your path, you can leave this at default",
+          "type": "string",
+          "default": "python",
+          "order": 3
+        }
+      },
+      "order": 13
+    },
     "commands": {
       "title": "Commands",
-      "description": "Commands are executed in Docker if enabled, or on your system.<br>The variable `cli` will be substituted with the corresponding path to the ODV CLI executable.",
+      "description": "Commands are executed in Docker if enabled, or on your system.<br>The variables `java`, `javac` and `python` will be substituted with the corresponding paths defined above.<br>The variable `cli` will be substituted with the corresponding path to the ODV CLI executable.<br>The variables `plot` and `config` will be substituted with the corresponding paths to the plot generator and plot config.",
       "type": "object",
       "properties": {
         "version": {
           "title": "CLI version",
           "description": "Used to check the version of your command line interface.",
           "type": "string",
-          "default": "java -jar \"%cli%\" --version",
+          "default": "\"%java%\" -jar \"%cli%\" --version",
           "order": 1
         },
         "init": {
           "title": "ODV repository init",
           "description": "Used to initialize an ODV repository.",
           "type": "string",
-          "default": "java -jar \"%cli%\" init .",
+          "default": "\"%java%\" -jar \"%cli%\" init .",
           "order": 2
         },
         "listtags": {
           "title": "ODV tag list",
           "description": "Used to get all tags of the current ODV repository.",
           "type": "string",
-          "default": "java -jar \"%cli%\" tag -l",
+          "default": "\"%java%\" -jar \"%cli%\" tag -l",
           "order": 3
         },
         "import": {
           "title": "ODV data import",
           "description": "Used to import data into your ODV repository.<br>**Arguments:**<br>`type`: import type<br>`files`: files to import",
           "type": "string",
-          "default": "java -jar \"%cli%\" import -t %type% %files%",
+          "default": "\"%java%\" -jar \"%cli%\" import -t %type% %files%",
           "order": 4
         },
         "importslice": {
           "title": "ODV slice import",
           "description": "Used to create a tag from slice file.<br>**Arguments:**<br>`file`: slice file to import<br>`tag`: tag to use",
           "type": "string",
-          "default": "java -jar \"%cli%\" tag -s \"%file%\" %tag%",
+          "default": "\"%java%\" -jar \"%cli%\" tag -s \"%file%\" %tag%",
           "order": 5
         },
         "export": {
           "title": "ODV data export",
           "description": "Used to export all data from your ODV repository.<br>**Arguments:**<br>`type`: import type",
           "type": "string",
-          "default": "java -jar \"%cli%\" export -t %type%",
+          "default": "\"%java%\" -jar \"%cli%\" export -t %type%",
           "order": 6
         },
         "exporttagged": {
           "title": "ODV data export (tagged)",
           "description": "Used to export data with the given tag from your ODV repository.<br>**Arguments:**<br>`type`: import type<br>`tag`: input tag",
           "type": "string",
-          "default": "java -jar \"%cli%\" export -t %type% -i %tag%",
+          "default": "\"%java%\" -jar \"%cli%\" export -t %type% -i %tag%",
           "order": 7
         },
         "compile": {
           "title": "ODV filter compilation",
           "description": "Used to compile ODV filter classes before execution<br>**Arguments:**<br>`file`: relative path to process container",
           "type": "string",
-          "default": "javac -cp \"%cli%\" \"%file%\"",
+          "default": "\"%javac%\" -cp \"%cli%\" \"%file%\"",
           "order": 8
         },
         "process": {
           "title": "ODV filter process",
           "description": "Used to execute filters.<br>**Arguments:**<br>`file`: relative path to process container<br>`out`: tag used for results",
           "type": "string",
-          "default": "java -jar \"%cli%\" process -f \"%file%\" -o %out%",
+          "default": "\"%java%\" -jar \"%cli%\" process -f \"%file%\" -o %out%",
           "order": 9
         },
         "processtagged": {
           "title": "ODV filter process",
           "description": "Used to execute filters.<br>**Arguments:**<br>`file`: relative path to process container<br>`in`: tag used for input<br>`out`: tag used for results",
           "type": "string",
-          "default": "java -jar \"%cli%\" process -f \"%file%\" -i %in% -o %out%",
+          "default": "\"%java%\" -jar \"%cli%\" process -f \"%file%\" -i %in% -o %out%",
           "order": 10
         },
         "plotversion": {
           "title": "Plot version",
           "description": "Used to check the version of the plot executable.<br>**Arguments:**<br>`plot`: path to your plot executable",
           "type": "string",
-          "default": "python3 \"%plot%\" --version",
+          "default": "\"%python%\" \"%plot%\" --version",
           "order": 11
         },
         "plot-daily": {
           "title": "Plot generation (Daily Plots)",
-          "description": "Used to generate plots from data.<br>**Arguments:**<br>`plot`: path to your plot executable<br>`file`: path to the data file<br>`out`: path to output directory",
+          "description": "Used to generate plots from data.<br>**Arguments:**<br>`file`: path to the data file<br>`out`: path to output directory",
           "type": "string",
-          "default": "python3 \"%plot%\" -c \"%config%\" -f \"%file%\" -d -L -o \"%out%\"",
+          "default": "\"%python%\" \"%plot%\" -c \"%config%\" -f \"%file%\" -d -L -o \"%out%\"",
           "order": 12
         },
         "plot-tiny": {
           "title": "Plot generation (Tiny Slices)",
-          "description": "Used to generate plots from data.<br>**Arguments:**<br>`plot`: path to your plot executable<br>`file`: path to the data file<br>`slice`: path to the slice file<br>`out`: path to output directory",
+          "description": "Used to generate plots from data.<br>**Arguments:**<br>`file`: path to the data file<br>`slice`: path to the slice file<br>`out`: path to output directory",
           "type": "string",
-          "default": "python3 \"%plot%\" -c \"%config%\" -f \"%file%\" -t \"%slice%\" -L -o \"%out%\"",
+          "default": "\"%python%\" \"%plot%\" -c \"%config%\" -f \"%file%\" -t \"%slice%\" -L -o \"%out%\"",
           "order": 13
         },
         "plot-normal": {
           "title": "Plot generation (Normal Slices)",
-          "description": "Used to generate plots from data.<br>**Arguments:**<br>`plot`: path to your plot executable<br>`file`: path to the data file<br>`slice`: path to the slice file<br>`out`: path to output directory",
+          "description": "Used to generate plots from data.<br>**Arguments:**<br>`file`: path to the data file<br>`slice`: path to the slice file<br>`out`: path to output directory",
           "type": "string",
-          "default": "python3 \"%plot%\" -c \"%config%\" -f \"%file%\" -n \"%slice%\" -L -o \"%out%\"",
+          "default": "\"%python%\" \"%plot%\" -c \"%config%\" -f \"%file%\" -n \"%slice%\" -L -o \"%out%\"",
           "order": 14
         },
         "plot-big": {
           "title": "Plot generation (Big Slices)",
-          "description": "Used to generate plots from data.<br>**Arguments:**<br>`plot`: path to your plot executable<br>`file`: path to the data file<br>`slice`: path to the slice file<br>`out`: path to output directory",
+          "description": "Used to generate plots from data.<br>**Arguments:**<br>`file`: path to the data file<br>`slice`: path to the slice file<br>`out`: path to output directory",
           "type": "string",
-          "default": "python3 \"%plot%\" -c \"%config%\" -f \"%file%\" -b \"%slice%\" -L -o \"%out%\"",
+          "default": "\"%python%\" \"%plot%\" -c \"%config%\" -f \"%file%\" -b \"%slice%\" -L -o \"%out%\"",
           "order": 15
         }
       },
-      "order": 13
+      "order": 14
     }
   }
 }
