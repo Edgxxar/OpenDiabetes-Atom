@@ -52,19 +52,54 @@
           "default": false,
           "order": 3
         },
+        "protocol": {
+          "title": "Remote Docker Protocl",
+          "description": "Protocol of your docker daemon.",
+          "type": "string",
+          "default": "https",
+          "order": 4
+        },
         "host": {
           "title": "Remote Docker Host",
-          "description": "Protocol and host of your docker daemon.",
+          "description": "Host of your docker daemon.",
           "type": "string",
-          "default": "http://mydockerhost.tld",
-          "order": 4
+          "default": "mydockerhost.tld",
+          "order": 5
         },
         "port": {
           "title": "Remote Docker Port",
           "description": "Port of your docker daemon",
           "type": "integer",
-          "default": 2375,
-          "order": 5
+          "default": 2376,
+          "order": 6
+        },
+        "cert": {
+          "title": "TLS Certificate",
+          "description": "Path to your TLS certificate file",
+          "type": "string",
+          "default": "docker.pem",
+          "order": 7
+        },
+        "key": {
+          "title": "TLS Keyfile",
+          "description": "Path to your TLS key file",
+          "type": "string",
+          "default": "dockerkey.pem",
+          "order": 8
+        },
+        "cacert": {
+          "title": "TLS CA Certificate",
+          "description": "Path to your TLS CA certificate file",
+          "type": "string",
+          "default": "dockerca.pem",
+          "order": 9
+        },
+        "noca": {
+          "title": "Do not verify TLS certificate",
+          "description": "**DANGER:** This sets the `NODE_TLS_REJECT_UNAUTHORIZED` environment variable to `0`!<br>Check this to use self-signed certificates.",
+          "type": "boolean",
+          "default": false,
+          "order": 10
         }
       },
       "order": 1
