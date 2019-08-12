@@ -1,7 +1,7 @@
 {
   "name": "open-diabetes-filter",
   "main": "./lib/index",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Allows programming OpenDiabetesFilters using Google Blockly",
   "keywords": [],
   "deserializers": {
@@ -165,14 +165,14 @@
           "default": "config.ini",
           "order": 4
         },
-        "cache-maxsize":  {
+        "cache-maxsize": {
           "title": "Plot Cache maximum size",
           "description": "Plots are cached for display. This value determines how many plots can be cached at once.",
           "type": "integer",
           "default": 100,
           "minimum": 3
         },
-        "cache-preload":  {
+        "cache-preload": {
           "title": "Plot Cache preload",
           "description": "The application always caches the plots currently displayed. This value determines how many plots before and after that will be loaded in advance.",
           "type": "integer",
