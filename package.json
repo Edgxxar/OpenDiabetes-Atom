@@ -54,7 +54,7 @@
           "order": 3
         },
         "protocol": {
-          "title": "Remote Docker Protocl",
+          "title": "Remote Docker Protocol",
           "description": "Protocol of your docker daemon.",
           "type": "string",
           "default": "https",
