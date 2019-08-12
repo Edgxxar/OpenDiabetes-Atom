@@ -20,6 +20,7 @@
     "fast-csv": "^3.4.0",
     "fs-extra": "^8.1.0",
     "gunzip-file": "^0.1.1",
+    "lru-cache": "^5.1.1",
     "md5-file": "^4.0.0",
     "pdfjs-dist": "^2.0.943",
     "slash": "^3.0.0",
@@ -163,6 +164,20 @@
           "type": "string",
           "default": "config.ini",
           "order": 4
+        },
+        "cache-maxsize":  {
+          "title": "Plot Cache maximum size",
+          "description": "Plots are cached for display. This value determines how many plots can be cached at once.",
+          "type": "integer",
+          "default": 100,
+          "minimum": 3
+        },
+        "cache-preload":  {
+          "title": "Plot Cache preload",
+          "description": "The application always caches the plots currently displayed. This value determines how many plots before and after that will be loaded in advance.",
+          "type": "integer",
+          "default": 5,
+          "minimum": 0
         }
       },
       "order": 3
