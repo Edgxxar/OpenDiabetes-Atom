@@ -28,107 +28,42 @@
     "xml-js": "^1.6.11"
   },
   "configSchema": {
-    "docker": {
-      "title": "Docker",
+    "cli": {
+      "title": "Open Diabetes Vault Command Line Interface",
       "type": "object",
       "properties": {
-        "enabled": {
-          "title": "Use Docker",
-          "description": "Use Docker for filter execution and plot generation. Docker images `plotteria` and `odv` need to be installed manually.",
-          "type": "boolean",
-          "default": false,
+        "executable": {
+          "title": "Executable Mode",
+          "description": "Use built-in executable, docker or a custom executable. Docker image `odv` needs to be installed for docker.",
+          "type": "string",
+          "default": "native",
+          "enum": [
+            "native",
+            "docker",
+            "custom"
+          ],
           "order": 1
         },
-        "cleanup": {
+        "docker-cleanup": {
           "title": "Remove Docker Containers After Exection",
           "description": "Remove Docker containers after they finished executing.",
           "type": "boolean",
           "default": true,
           "order": 2
         },
-        "remote": {
-          "title": "Use Remote Docker",
-          "description": "Use a remote Docker instance. Specify host and port below.",
-          "type": "boolean",
-          "default": false,
-          "order": 3
-        },
-        "protocol": {
-          "title": "Remote Docker Protocol",
-          "description": "Protocol of your docker daemon.",
-          "type": "string",
-          "default": "https",
-          "order": 4
-        },
-        "host": {
-          "title": "Remote Docker Host",
-          "description": "Host of your docker daemon.",
-          "type": "string",
-          "default": "mydockerhost.tld",
-          "order": 5
-        },
-        "port": {
-          "title": "Remote Docker Port",
-          "description": "Port of your docker daemon",
-          "type": "integer",
-          "default": 2376,
-          "order": 6
-        },
-        "cert": {
-          "title": "TLS Certificate",
-          "description": "Path to your TLS certificate file",
-          "type": "string",
-          "default": "docker.pem",
-          "order": 7
-        },
-        "key": {
-          "title": "TLS Keyfile",
-          "description": "Path to your TLS key file",
-          "type": "string",
-          "default": "dockerkey.pem",
-          "order": 8
-        },
-        "cacert": {
-          "title": "TLS CA Certificate",
-          "description": "Path to your TLS CA certificate file",
-          "type": "string",
-          "default": "dockerca.pem",
-          "order": 9
-        },
-        "noca": {
-          "title": "Do not verify TLS certificate",
-          "description": "**DANGER:** This sets the `NODE_TLS_REJECT_UNAUTHORIZED` environment variable to `0`!<br>Check this to use self-signed certificates.",
-          "type": "boolean",
-          "default": false,
-          "order": 10
-        }
-      },
-      "order": 1
-    },
-    "cli": {
-      "title": "Open Diabetes Vault Command Line Interface",
-      "type": "object",
-      "properties": {
-        "native": {
-          "title": "Use built-in ODV CLI",
-          "description": "Not used if you are using Docker. Use the built-in OpenDiabetesVault command line interface.",
-          "type": "boolean",
-          "default": true,
-          "order": 1
-        },
         "custom": {
           "title": "Custom ODV CLI",
-          "description": "Not used if you are using Docker. Path to your OpenDiabetesVault command line interface executable.",
+          "description": "Not used unless executable mode is set to *custom*. Path to your OpenDiabetesVault command line interface executable.",
           "type": "string",
           "default": "OpenDiabetesVault.jar",
-          "order": 2
+          "order": 3
         },
         "precompile": {
           "title": "Filter Compilation",
           "description": "If enabled filter processes will be compiled, using the compile command below, before being passed to the CLI.",
           "type": "boolean",
           "default": true,
-          "order": 3
+          "order": 4
         }
       },
       "order": 2
@@ -137,47 +72,61 @@
       "title": "Plotteria",
       "type": "object",
       "properties": {
-        "native": {
-          "title": "Use built-in plot generator",
-          "description": "Not used if you are using Docker. Use the built-in plot generator.",
+        "executable": {
+          "title": "Executable Mode",
+          "description": "Use built-in executable, docker or a custom executable. Docker image `plotteria` needs to be installed for docker.",
+          "type": "string",
+          "default": "native",
+          "enum": [
+            "native",
+            "docker",
+            "custom"
+          ],
+          "order": 1
+        },
+        "docker-cleanup": {
+          "title": "Remove Docker Containers After Exection",
+          "description": "Remove Docker containers after they finished executing.",
           "type": "boolean",
           "default": true,
-          "order": 1
+          "order": 2
         },
         "custom": {
           "title": "Custom Plot Generator",
-          "description": "Not used if you are using Docker. Path to your plot executable.",
+          "description": "Not used unless executable mode is set to *custom*. Path to your plot executable.",
           "type": "string",
           "default": "plot.py",
-          "order": 2
+          "order": 3
         },
         "config-native": {
           "title": "Use built-in plot config",
           "description": "Use the built-in plot config.",
           "type": "boolean",
           "default": true,
-          "order": 3
+          "order": 4
         },
         "config-custom": {
           "title": "Custom Plot Config",
           "description": "Path to your plot config.",
           "type": "string",
           "default": "config.ini",
-          "order": 4
+          "order": 5
         },
         "cache-maxsize": {
           "title": "Plot Cache maximum size",
           "description": "Plots are cached for display. This value determines how many plots can be cached at once.",
           "type": "integer",
           "default": 100,
-          "minimum": 3
+          "minimum": 3,
+          "order": 6
         },
         "cache-preload": {
           "title": "Plot Cache preload",
           "description": "The application always caches the plots currently displayed. This value determines how many plots before and after that will be loaded in advance.",
           "type": "integer",
           "default": 5,
-          "minimum": 0
+          "minimum": 0,
+          "order": 7
         }
       },
       "order": 3
