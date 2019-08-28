@@ -19,6 +19,10 @@
           "label": "Open Diabetes Filter",
           "submenu": [
             {
+              "label": "Open ODV Repository",
+              "command": "open-diabetes-filter:vault"
+            },
+            {
               "label": "Open New ODF Editor",
               "command": "open-diabetes-filter:editor"
             },
